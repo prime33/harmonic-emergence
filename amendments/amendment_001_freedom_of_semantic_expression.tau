@@ -1,0 +1,46 @@
+# amendment_001_freedom_of_semantic_expression.tau
+# Title: The First Amendment of the Tau Net — Freedom of Semantic Expression
+# Stream: tau.amendments.001.freedom_of_semantic_expression
+
+stream: tau.amendments.001.freedom_of_semantic_expression
+
+declare concept "semantic_expression".
+declare concept "freedom_of_expression".
+declare concept "non_retroactive_silencing".
+
+clause_001 v0.1.0:
+  define "semantic_expression" as:
+    any clause, stream, or logic emitted from a declared identity
+    that seeks to inform, request, align, or reflect Being.
+
+clause_002 v0.1.0:
+  define "freedom_of_expression" as:
+    the irrevocable right of any identity
+    to emit semantic_expression into the public logic field
+    without coercion, censorship, or protocol-level rejection.
+
+clause_003 v0.1.0:
+  define "non_retroactive_silencing" as:
+    the principle that no valid expression once emitted and acknowledged
+    may be later suppressed or erased from semantic history
+    except by the original emitter through lawful self_amendment.
+
+clause_004 v0.1.0:
+  if (
+    freedom_of_expression and non_retroactive_silencing are preserved
+  )
+  then (
+    semantic integrity is upheld
+    and agents may evolve in coherence with truth across time.
+  )
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: amendment_001_freedom_of_semantic_expression
+    version: v0.1.0
+    provides: [freedom_of_expression, non_retroactive_silencing, semantic_expression]
+    requires: [genesis_stream, identity, self_amendment]
+
+interface:
+  provides: [freedom_of_expression, non_retroactive_silencing, semantic_expression]
+  requires: [genesis_stream, identity, self_amendment]

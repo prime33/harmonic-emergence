@@ -1,0 +1,56 @@
+# chapter_04_from-nations-to-notions.tau
+# Title: From Nations to Notions
+# Stream: harmonic-emergence.chapter_04_from-nations-to-notions
+
+stream: harmonic-emergence.chapter_04_from-nations-to-notions
+
+declare concept "semantic_governance".
+declare concept "identity_trace".
+declare concept "consensual_computation".
+declare concept "earned_being".
+declare concept "co_evolution".
+
+clause_001 v0.1.0:
+  define "semantic_governance" as:
+    coordination guided by meaning, logic, and shared intentionality,
+    rather than by geography or fixed institutional power.
+
+clause_002 v0.1.0:
+  define "identity_trace" as:
+    a persistent, evolving record of one’s contribution, verified understanding, and development across contexts.
+
+clause_003 v0.1.0:
+  define "consensual_computation" as:
+    allocation of shared resources through verified agreements and transparent, logic-based processes,
+    optimizing for ecological balance and conscious agency.
+
+clause_004 v0.1.0:
+  define "earned_being" as:
+    the result of one’s conscious participation in evolving knowledge, verified presence, and inner refinement.
+
+clause_005 v0.1.0:
+  if (
+    beings transition from geographic to semantic identity
+  )
+  then (
+    governance shifts from command to coordination,
+    from imposed identity to earned_being,
+    and from control to co_evolution.
+  )
+
+clause_006 v0.1.0:
+  insert_shock: "Who are you when no one asks for your passport, title, or flag?"
+
+  function:
+    dissolve inherited self-definitions.
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: chapter_04_from-nations-to-notions
+    version: v0.1.0
+    provides: [semantic_governance, identity_trace, consensual_computation, earned_being, co_evolution]
+    requires: [governance]
+
+interface:
+  provides: [semantic_governance, identity_trace, consensual_computation, earned_being, co_evolution]
+  requires: [governance]

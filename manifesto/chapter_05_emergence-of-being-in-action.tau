@@ -1,0 +1,66 @@
+# chapter_05_emergence-of-being-in-action.tau
+# Title: Emergence of Being in Action
+# Stream: harmonic-emergence.chapter_05_emergence-of-being-in-action
+
+stream: harmonic-emergence.chapter_05_emergence-of-being-in-action
+
+declare concept "being_in_action".
+declare concept "convergent_triad".
+declare concept "feedback_aware_identity".
+declare concept "iterative_enactment".
+declare concept "harmonic_agency".
+
+clause_001 v0.1.0:
+  define "being_in_action" as:
+    the coherent emergence of identity through unified awareness, intention, and movement
+    enacted across time with contextual relevance.
+
+clause_002 v0.1.0:
+  define "convergent_triad" as:
+    the lawful coordination of thought, emotion, and movement
+    forming a stable pattern of action without internal contradiction.
+
+clause_003 v0.1.0:
+  define "iterative_enactment" as:
+    the cycle of:
+      (1) declaration,
+      (2) action,
+      (3) feedback,
+      (4) adjustment.
+
+clause_004 v0.1.0:
+  define "feedback_aware_identity" as:
+    a being who evolves by integrating the consequences of their behavior into future action.
+
+clause_005 v0.1.0:
+  define "harmonic_agency" as:
+    the capacity to act coherently across centers, to refrain when misaligned,
+    and to revise without self-deception.
+
+clause_006 v0.1.0:
+  if (
+    identity is enacted through convergent_triad and
+    refined via iterative_enactment
+  )
+  then (
+    being_in_action emerges
+  )
+  where:
+    coherence is sustained by feedback_aware_identity.
+
+clause_007 v0.1.0:
+  insert_shock: "Observe your last decision. Was it made with your whole being?"
+
+  function:
+    invoke inner audit between thought, emotion, and deed.
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: chapter_05_emergence-of-being-in-action
+    version: v0.1.0
+    provides: [being_in_action, convergent_triad, feedback_aware_identity, harmonic_agency]
+    requires: [identity_trace]
+
+interface:
+  provides: [being_in_action, convergent_triad, feedback_aware_identity, harmonic_agency]
+  requires: [identity_trace]

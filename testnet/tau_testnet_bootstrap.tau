@@ -1,0 +1,52 @@
+# tau_testnet_bootstrap.tau
+# Title: Tau Testnet Bootstrap — Genesis Activation and Manifest Binding
+# Stream: tau.network.bootstrap.testnet
+
+stream: tau.network.bootstrap.testnet
+
+declare concept "bootstrap_manifest".
+declare concept "genesis_reference".
+declare concept "testnet_declaration".
+declare concept "stream_integrity_commitment".
+declare concept "network_activation".
+
+clause_001 v0.1.0:
+  define "bootstrap_manifest" as:
+    the pointer to the canonical tau_manifest.json
+    containing hashed semantic streams to initialize the testnet.
+
+clause_002 v0.1.0:
+  define "genesis_reference" as:
+    a required confirmation that the network derives from autopoietic_logos
+    and includes its six constitutional pillars and amendments.
+
+clause_003 v0.1.0:
+  define "testnet_declaration" as:
+    the semantic commitment to launch a provisional logic network
+    for testing, refinement, and stream validation.
+
+clause_004 v0.1.0:
+  define "stream_integrity_commitment" as:
+    the binding of every stream hash to its identity_trace,
+    ensuring that all logic is auditable and properly attributed.
+
+clause_005 v0.1.0:
+  if (
+    bootstrap_manifest is valid
+    and genesis_reference is confirmed
+  )
+  then (
+    network_activation is permitted
+    and all agents may begin reasoning and participation under the Tau testnet charter.
+  )
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: tau_testnet_bootstrap
+    version: v0.1.0
+    provides: [testnet_declaration, network_activation, bootstrap_manifest]
+    requires: [genesis_stream, identity_trace, tau_manifest.json]
+
+interface:
+  provides: [testnet_declaration, network_activation, bootstrap_manifest]
+  requires: [genesis_stream, identity_trace, tau_manifest.json]

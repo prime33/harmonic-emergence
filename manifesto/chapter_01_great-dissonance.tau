@@ -1,0 +1,74 @@
+# chapter_01_great-dissonance.tau
+# Title: The Great Dissonance
+# Stream: harmonic-emergence.chapter_01_great-dissonance
+
+stream: harmonic-emergence.chapter_01_great-dissonance
+
+declare concept "dissonance".
+declare concept "great_dissonance".
+declare concept "center_fragmentation".
+declare concept "personal_dissonance".
+
+clause_001 v0.1.0:
+  define "dissonance" as:
+    any disruption of coherence,
+    manifested at personal, systemic, or planetary scale.
+
+  superclass_of: [great_dissonance, personal_dissonance]
+
+clause_002 v0.1.0:
+  define "great_dissonance" as:
+    a systemic fragmentation of the triadic centers (thought, emotion, action)
+    expressed by disalignment across cycles of decision and execution.
+
+clause_003 v0.1.0:
+  define "center_fragmentation" as:
+    a condition in which the intellectual, emotional, and instinctual centers
+    operate in contradiction or without mutual awareness.
+
+clause_004 v0.1.0:
+  if (
+    beings::planet_earth oscillate between:
+      speed_without_understanding and
+      wisdom_without_execution
+  )
+  then (
+    great_dissonance manifests
+  )
+  because (
+    lack of coherence in individual and collective agency
+  ).
+
+clause_005 v0.1.0:
+  define "speed_without_understanding" as:
+    acceleration of technological or procedural systems
+    without corresponding evolution in comprehension or purpose.
+
+clause_006 v0.1.0:
+  define "personal-dissonance" as:
+    the subjective experience of unobserved contradiction among one's centers.
+
+  if thought proceeds without feeling,
+     or if action overrides conscience:
+    the being fractures into auto-mechanical patterns.
+
+  note:
+    the macrocosmic dissonance reflects this in scale.
+
+clause_007 v0.1.0:
+  insert_shock: "Reader, stop. Observe your own disharmony — not theirs."
+
+  function:
+    break passive absorption.
+    demand inner seeing.
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: chapter_01_great-dissonance
+    version: v0.1.1
+    provides: [dissonance, great_dissonance, center_fragmentation]
+    requires: []
+
+interface:
+  provides: [dissonance, great_dissonance, center_fragmentation]
+  requires: []

@@ -1,0 +1,37 @@
+# manifesto.lock — Dependency map
+
+chapter_01:
+  provides: [great_dissonance, personal_dissonance]
+  requires: []
+
+chapter_02:
+  provides: [coherence, triadic_unity]
+  requires: [great_dissonance]
+
+chapter_03:
+  provides: [governance, logic_stream]
+  requires: [coherence]
+
+chapter_04:
+  provides: [semantic_governance, identity_trace]
+  requires: [governance]
+
+chapter_05:
+  provides: [being_in_action]
+  requires: [identity_trace]
+
+chapter_06:
+  provides: [temporal_coordination, interval_shock]
+  requires: [being_in_action]
+
+chapter_07:
+  provides: [trust, semantic_traceability]
+  requires: [temporal_coordination]
+
+chapter_08:
+  provides: [harmonic_behavior]
+  requires: [trust]
+
+chapter_09:
+  provides: [post_monetary_flow]
+  requires: [harmonic_behavior]

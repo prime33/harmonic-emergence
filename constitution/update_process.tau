@@ -1,0 +1,64 @@
+# constitution/update_process.tau
+# Title: Update Process — Mechanism for Semantic Amendments and Constitutional Evolution
+# Stream: tau.constitution.update_process
+
+stream: tau.constitution.update_process
+
+declare concept "stream_version".
+declare concept "proposed_amendment".
+declare concept "consensus_threshold".
+declare concept "semantic_diff".
+declare concept "historical_integrity".
+declare concept "recursive_legitimacy".
+
+clause_001 v0.1.0:
+  define "stream_version" as:
+    a declared state of a logic stream identified by version metadata
+    and content hash.
+
+clause_002 v0.1.0:
+  define "proposed_amendment" as:
+    a semantically defined clause or clause set
+    intended to modify or extend a previously versioned stream.
+
+clause_003 v0.1.0:
+  define "consensus_threshold" as:
+    a context-dependent agreement level
+    required to enact a proposed_amendment as valid law.
+
+clause_004 v0.1.0:
+  define "semantic_diff" as:
+    the delta between two stream_versions,
+    expressed in terms of added, removed, or modified clauses.
+
+clause_005 v0.1.0:
+  define "historical_integrity" as:
+    the property by which previous versions and their semantics
+    remain referenceable and traceable within the update lineage.
+
+clause_006 v0.1.0:
+  define "recursive_legitimacy" as:
+    the requirement that an amendment to a stream
+    respects that stream’s meta-rules and constitutional ancestry.
+
+clause_007 v0.1.0:
+  if (
+    proposed_amendment achieves consensus_threshold
+  )
+  and (
+    it preserves historical_integrity and recursive_legitimacy
+  )
+  then (
+    it may be ratified as a new stream_version.
+  )
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: update_process
+    version: v0.1.0
+    provides: [stream_version, proposed_amendment, consensus_threshold, semantic_diff, historical_integrity, recursive_legitimacy]
+    requires: [genesis_stream]
+
+interface:
+  provides: [stream_version, proposed_amendment, consensus_threshold, semantic_diff, historical_integrity, recursive_legitimacy]
+  requires: [genesis_stream]

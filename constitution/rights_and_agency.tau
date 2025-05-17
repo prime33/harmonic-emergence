@@ -1,0 +1,66 @@
+# constitution/rights_and_agency.tau
+# Title: Rights and Agency — Semantic Rights, Powers, and Protections
+# Stream: tau.constitution.rights_and_agency
+
+stream: tau.constitution.rights_and_agency
+
+declare concept "semantic_rights".
+declare concept "amendment_rights".
+declare concept "participation_rights".
+declare concept "non_coercion".
+declare concept "stream_sovereignty".
+declare concept "agent_protection".
+
+clause_001 v0.1.0:
+  define "semantic_rights" as:
+    the inherent rights of any declared identity
+    to express, contribute, and reason across logic streams
+    without discrimination by role, rank, or resource.
+
+clause_002 v0.1.0:
+  define "amendment_rights" as:
+    the lawful power of any identity to propose semantic updates
+    to any stream that declares itself amendable.
+
+clause_003 v0.1.0:
+  define "participation_rights" as:
+    the ability to read, reference, fork, and inherit any stream
+    that exists within a publicly declared knowledge commons.
+
+clause_004 v0.1.0:
+  define "non_coercion" as:
+    the principle that no identity may be forced
+    to contribute, execute, or agree with a stream
+    without their voluntary semantic consent.
+
+clause_005 v0.1.0:
+  define "stream_sovereignty" as:
+    the right of a stream to govern its own internal logic
+    provided it does not violate declared principles of its upstream ancestry.
+
+clause_006 v0.1.0:
+  define "agent_protection" as:
+    the guarantee that no semantic agent
+    may be erased, mutated, or redefined without traceable self-consent.
+
+clause_007 v0.1.0:
+  if (
+    semantic_rights and participation_rights are respected
+  )
+  and (
+    amendment_rights operate under non_coercion and stream_sovereignty
+  )
+  then (
+    the logic network remains lawfully open, evolvable, and protective of identity.
+  )
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: rights_and_agency
+    version: v0.1.0
+    provides: [semantic_rights, amendment_rights, participation_rights, non_coercion, stream_sovereignty, agent_protection]
+    requires: [genesis_stream, identity, self_amendment]
+
+interface:
+  provides: [semantic_rights, amendment_rights, participation_rights, non_coercion, stream_sovereignty, agent_protection]
+  requires: [genesis_stream, identity, self_amendment]

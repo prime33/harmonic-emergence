@@ -1,0 +1,63 @@
+# constitution/identity_core.tau
+# Title: Identity Core — Foundational Structure of Individualized Agency
+# Stream: tau.constitution.identity_core
+
+stream: tau.constitution.identity_core
+
+declare concept "identity".
+declare concept "identity_trace".
+declare concept "semantic_consistency".
+declare concept "contribution_record".
+declare concept "reflexive_memory".
+declare concept "self_amendment".
+
+clause_001 v0.1.0:
+  define "identity" as:
+    a stream-local agent reference
+    composed of intention, traceable behavior, and evolving self-definition.
+
+clause_002 v0.1.0:
+  define "identity_trace" as:
+    the verifiable accumulation of one’s participation across logic streams,
+    recorded as declarations, contributions, and semantic updates.
+
+clause_003 v0.1.0:
+  define "semantic_consistency" as:
+    the degree to which an agent’s declarations align with their actions
+    across time, streams, and versions.
+
+clause_004 v0.1.0:
+  define "contribution_record" as:
+    a ledger of meaningful clauses, stream edits, or value-injections
+    traceable to an identity and subject to verification.
+
+clause_005 v0.1.0:
+  define "reflexive_memory" as:
+    a memory stream by which an agent may recall, reflect on,
+    and amend their own prior reasoning or behavior.
+
+clause_006 v0.1.0:
+  if (
+    an agent maintains semantic_consistency
+    and updates their reflexive_memory through self_amendment
+  )
+  then (
+    their identity attains coherence
+    and their trace is considered semantically trustworthy.
+  )
+
+clause_007 v0.1.0:
+  define "self_amendment" as:
+    the lawful ability of an identity to revise its own declarations
+    provided such revision is truthfully recorded and logically coherent.
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: identity_core
+    version: v0.1.0
+    provides: [identity, identity_trace, semantic_consistency, contribution_record, reflexive_memory, self_amendment]
+    requires: [genesis_stream]
+
+interface:
+  provides: [identity, identity_trace, semantic_consistency, contribution_record, reflexive_memory, self_amendment]
+  requires: [genesis_stream]

@@ -1,0 +1,58 @@
+{
+  "constitution/autopoietic_logos.tau": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "constitution/identity_core.tau": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "constitution/update_process.tau": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "constitution/rights_and_agency.tau": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "constitution/tau_network.tau": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "constitution/consensus_logic.tau": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "amendments/amendment_001_freedom_of_semantic_expression.tau": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "amendments/amendment_002_semantic_resonance_and_integration.tau": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "constitution_map.md": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "manifesto.lock": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "interface_map.txt": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "epilogue.md": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "docs/index.md": {
+    "hash": null,
+    "error": "file not found"
+  },
+  "streams/tools/validate_tau.tau": {
+    "hash": null,
+    "error": "file not found"
+  }
+}

@@ -1,0 +1,62 @@
+# constitution/tau_network.tau
+# Title: Tau Network — Binding Stream of Manifesto, Constitution, and Agent Cohesion
+# Stream: tau.constitution.tau_network
+
+stream: tau.constitution.tau_network
+
+declare concept "network_genesis".
+declare concept "stream_registry".
+declare concept "agent_linkage".
+declare concept "constitutional_inheritance".
+declare concept "trustless_coherence".
+declare concept "stream_execution_scope".
+
+clause_001 v0.1.0:
+  define "network_genesis" as:
+    the coordination point from which all Tau logic streams
+    declare lineage, interface, and semantic commitment.
+
+clause_002 v0.1.0:
+  define "stream_registry" as:
+    a recorded map of logic streams,
+    linking each stream to its provides, requires, version, and hash.
+
+clause_003 v0.1.0:
+  define "agent_linkage" as:
+    the mechanism by which identities bind themselves to stream participation,
+    preserving trace, role, and reflexive memory across execution.
+
+clause_004 v0.1.0:
+  define "constitutional_inheritance" as:
+    the propagation of `autopoietic_logos`, `identity_core`, `rights_and_agency`,
+    and `update_process` into all network-recognized semantic structures.
+
+clause_005 v0.1.0:
+  define "trustless_coherence" as:
+    a network condition where agents may compute alignment and stream integrity
+    without privileged intermediaries or opaque computation.
+
+clause_006 v0.1.0:
+  define "stream_execution_scope" as:
+    the declared domain within which a stream operates,
+    including testnet, mainnet, local, forked, or sovereign zones.
+
+clause_007 v0.1.0:
+  if (
+    a stream enters the tau_network registry
+  )
+  then (
+    it inherits constitutional_inheritance
+    and becomes executable under stream_execution_scope.
+  )
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: tau_network
+    version: v0.1.0
+    provides: [network_genesis, stream_registry, agent_linkage, constitutional_inheritance, trustless_coherence, stream_execution_scope]
+    requires: [genesis_stream, identity, stream_version]
+    
+interface:
+  provides: [network_genesis, stream_registry, agent_linkage, constitutional_inheritance, trustless_coherence, stream_execution_scope]
+  requires: [genesis_stream, identity, stream_version]

@@ -1,0 +1,29 @@
+# validate_tau.tau — logic-native validator
+
+stream: streams.tools.validate_tau
+
+declare concept "tau_file".
+declare concept "clause".
+declare concept "concept_declaration".
+declare concept "provides_declaration".
+declare concept "requires_declaration".
+declare concept "validation_warning".
+
+clause_001 v0.1.0:
+  every tau_file must contain a concept_declaration.
+  if missing:
+    emit validation_warning::"Missing concept declaration".
+
+clause_002 v0.1.0:
+  every tau_file must contain at least one clause identifier.
+  if missing:
+    emit validation_warning::"No clauses found in stream".
+
+clause_003 v0.1.0:
+  clause identifiers must be unique.
+  if duplicated:
+    emit validation_warning::"Duplicate clause ID found".
+
+clause_004 v0.1.0:
+  if provides or requires is missing in interface:
+    emit validation_warning::"Missing stream dependency metadata".

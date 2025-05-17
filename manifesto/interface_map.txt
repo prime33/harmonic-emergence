@@ -1,0 +1,41 @@
+# interface_map.txt — Stream Provides/Requires Summary (v0.1.1)
+
+chapter_01_great-dissonance.tau
+  provides: [dissonance, great_dissonance, center_fragmentation]
+  requires: []
+
+chapter_02_return-to-coherence.tau
+  provides: [coherence, triadic_unity, conscious_alignment, dissonance]
+  requires: [great_dissonance]
+
+chapter_03_co-governance-by-syntax.tau
+  provides: [governance, logic_stream, semantic_consent, syntax_evolution, authority_as_clarity]
+  requires: [coherence]
+
+chapter_04_from-nations-to-notions.tau
+  provides: [semantic_governance, identity_trace, consensual_computation, earned_being, co_evolution]
+  requires: [governance]
+
+chapter_05_emergence-of-being-in-action.tau
+  provides: [being_in_action, convergent_triad, feedback_aware_identity, harmonic_agency]
+  requires: [identity_trace]
+
+chapter_06_temporal-coordination-law-of-octaves.tau
+  provides: [octave_development, interval_shock, temporal_coordination, rhythmic_emergence]
+  requires: [being_in_action]
+
+chapter_07_multi-agent-protocol-of-trust.tau
+  provides: [trust, semantic_traceability, autonomy_in_alignment, reflexive_verification, protocol_commons]
+  requires: [octave_development]
+
+chapter_08_harmonic-agent-behavior.tau
+  provides: [harmonic_behavior, semantic_reflex, context_attunement, behavioral_coherence, resonant_adjustment]
+  requires: [trust]
+
+chapter_09_value-as-energy-in-relation.tau
+  provides: [relational_value, energy_of_contribution, post_monetary_flow, reciprocal_distribution, semantic_economy]
+  requires: [harmonic_behavior]
+
+epilogue.md
+  provides: [recursion_point]
+  requires: [full_manifesto_experience]

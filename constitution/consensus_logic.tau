@@ -1,0 +1,65 @@
+# constitution/consensus_logic.tau
+# Title: Consensus Logic — Semantic Thresholds and Agreement Mechanisms
+# Stream: tau.constitution.consensus_logic
+
+stream: tau.constitution.consensus_logic
+
+declare concept "semantic_consensus".
+declare concept "consensus_threshold".
+declare concept "amendment_quorum".
+declare concept "contradiction_detection".
+declare concept "consensus_finality".
+declare concept "fork_resolution".
+
+clause_001 v0.1.0:
+  define "semantic_consensus" as:
+    a verifiable alignment among agent-declared logic streams
+    sufficient to enact change or affirm shared meaning.
+
+clause_002 v0.1.0:
+  define "consensus_threshold" as:
+    the minimum necessary degree of logical agreement
+    required to ratify a stream or amendment as valid.
+
+clause_003 v0.1.0:
+  define "amendment_quorum" as:
+    the number or weight of identity_traces
+    that must contribute or affirm a proposed_amendment.
+
+clause_004 v0.1.0:
+  define "contradiction_detection" as:
+    a process which identifies unresolved logical conflict
+    between coexisting or versioned streams.
+
+clause_005 v0.1.0:
+  define "consensus_finality" as:
+    a state in which no further contradiction is found
+    and a semantic consensus remains stable across verification cycles.
+
+clause_006 v0.1.0:
+  define "fork_resolution" as:
+    the semantic and agent-led mechanism for handling competing versions,
+    enabling one lineage to become canonical or forking to persist transparently.
+
+clause_007 v0.1.0:
+  if (
+    amendment_quorum is reached
+    and contradiction_detection yields no blocking conflict
+  )
+  then (
+    semantic_consensus is achieved
+    and consensus_finality may be declared.
+
+    fork_resolution only required if multiple stable consensuses persist.
+  )
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: consensus_logic
+    version: v0.1.0
+    provides: [semantic_consensus, consensus_threshold, amendment_quorum, contradiction_detection, consensus_finality, fork_resolution]
+    requires: [genesis_stream, identity, proposed_amendment]
+
+interface:
+  provides: [semantic_consensus, consensus_threshold, amendment_quorum, contradiction_detection, consensus_finality, fork_resolution]
+  requires: [genesis_stream, identity, proposed_amendment]

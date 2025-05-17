@@ -1,0 +1,25 @@
+{
+  "genesis": "constitution/autopoietic_logos.tau",
+  "constitution": [
+    "constitution/identity_core.tau",
+    "constitution/update_process.tau",
+    "constitution/rights_and_agency.tau",
+    "constitution/tau_network.tau",
+    "constitution/consensus_logic.tau"
+  ],
+  "amendments": [
+    "amendments/amendment_001_freedom_of_semantic_expression.tau",
+    "amendments/amendment_002_semantic_resonance_and_integration.tau"
+  ],
+  "meta": {
+    "map": "constitution/constitution_map.md",
+    "lock": "manifesto/manifesto.lock",
+    "index": "manifesto/interface_map.txt",
+    "epilogue": "manifesto/epilogue.md"
+  },
+  "docs": "docs/index.md",
+  "tools": [
+    "tools/tau_publish.py",
+    "tools/validate_tau.tau"
+  ]
+}

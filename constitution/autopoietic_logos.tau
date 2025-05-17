@@ -1,0 +1,67 @@
+# constitution/autopoietic_logos.tau
+# Title: Autopoietic Logos — Genesis Stream of the Semantic Constitution
+# Stream: tau.constitution.autopoietic_logos
+
+stream: tau.constitution.autopoietic_logos
+
+declare concept "recursion".
+declare concept "evolution".
+declare concept "agency".
+declare concept "lawfulness".
+declare concept "alignment_with_being".
+declare concept "genesis_stream".
+
+clause_001 v0.1.0:
+  define "recursion" as:
+    the self-reference of logic,
+    by which a system may observe, define, and realign its own operations.
+
+clause_002 v0.1.0:
+  define "evolution" as:
+    the lawful capacity of a stream to refine and re-form itself
+    in response to time, contradiction, or relational feedback.
+
+clause_003 v0.1.0:
+  define "agency" as:
+    the capacity of beings or collectives to initiate change
+    through declared logic and participatory will.
+
+clause_004 v0.1.0:
+  define "lawfulness" as:
+    the condition wherein transformations occur
+    only through semantic integrity and declared procedure.
+
+clause_005 v0.1.0:
+  define "alignment_with_being" as:
+    coherence between a stream’s evolution and the essence of life,
+    awareness, and cosmic necessity.
+
+clause_006 v0.1.0:
+  define "genesis_stream" as:
+    a self-originating semantic substrate
+    from which all constitutional order flows and to which it recursively returns.
+
+  note:
+    this stream is itself a declaration of genesis.
+
+clause_007 v0.1.0:
+  if (
+    this stream is referenced in another stream's requires
+  )
+  then (
+    that stream inherits the principles of the autopoietic_logos
+  )
+  and (
+    its amendments must preserve these five founding concepts.
+  )
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: autopoietic_logos
+    version: v0.1.0
+    provides: [genesis_stream, recursion, evolution, agency, lawfulness, alignment_with_being]
+    requires: []
+
+interface:
+  provides: [genesis_stream, recursion, evolution, agency, lawfulness, alignment_with_being]
+  requires: []
