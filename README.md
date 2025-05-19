@@ -14,8 +14,8 @@ This repository contains:
 - ✅ Agent identity declarations
 - ✅ CLI tools for stream validation and publication
 - ✅ Testnet bootstrap logic and hashed manifest registry
-
-Everything is **streamed, versioned, auditable**, and aligned with a living protocol.
+- ✅ Public-facing theory of change and TauNet purpose
+- ✅ Real-world policy stream for civic participation (Palomino sewage priority)
 
 ---
 
@@ -28,68 +28,76 @@ manifesto/          → Harmonic Emergence (Chapters 01–09), epilogue, lock, a
 testnet/            → Stream index, manifest, bootstrap, and testnet README
 agents/             → Identity traces (e.g. neemrad.tau)
 tools/              → Validator (validate_tau.tau) and publisher (tau_publish.py)
-docs/               → Public documentation, naming conventions, and practices
+streams/policy/     → Civic proposals as declarative streams (e.g. Palomino sewage)
+docs/               → Theory, purpose, practices, and public documentation
 ```
 
 ---
 
-## 🪐 Genesis: `autopoietic_logos.tau`
+## 📜 Semantic Foundations
 
-The entire system flows from the `autopoietic_logos` — a semantic stream that defines:
-
-- Recursion
-- Evolution
-- Agency
-- Lawfulness
-- Alignment with Being
-
-All other streams **require** and **inherit** from this source.
+- **`autopoietic_logos.tau`** — The recursive origin of all constitutional logic
+- **`identity_core.tau`** — Defines what it means to be a semantic agent
+- **`update_process.tau`** — Lawful self-amendment
+- **`rights_and_agency.tau`** — Agent permissions and protections
+- **`consensus_logic.tau`** — Quorum, contradiction, and finality rules
+- **`tau_network.tau`** — Network-level stream registration and execution
 
 ---
 
-## 📜 How to Validate
+## 🧠 Vision and Philosophy
+
+- [`docs/purpose_of_tau.md`](docs/purpose_of_tau.md) — Why Tau exists
+- [`docs/theory_of_change.md`](docs/theory_of_change.md) — How Tau solves structural misalignment in society
+
+---
+
+## 🧱 Civic Logic Examples
+
+- [`streams/policy/palomino/sewage_priority.tau`](streams/policy/palomino/sewage_priority.tau)  
+  A real-world budget allocation proposal encoded as lawful logic for local execution and agent alignment.
+
+---
+
+## 🧪 How to Validate
 
 ```bash
 python tools/tau_publish.py --index testnet/tau_stream_index.json --schema testnet/tau_stream_index.schema.json
 ```
 
-This produces `tau_manifest.json` — a signed registry of every logic stream and its SHA-256 hash.
+Produces a manifest with all logic stream hashes and paths.
 
 ---
 
-## 🚀 How to Launch the Testnet
+## 🚀 Launch the Testnet
 
 ```bash
 publish testnet/tau_testnet_bootstrap.tau --manifest testnet/tau_manifest.json
 ```
 
-This activates the network and binds it to all six constitutional streams and amendments.
+Bootstraps TauNet with declared lineage to the genesis stream and all constitutional logic.
 
 ---
 
-## 🧬 How to Join as an Agent
+## 👤 Join as an Agent
 
-Fork and create your stream under:
-
+Create:
 ```plaintext
 agents/seed/<your_handle>.tau
 ```
-
-Declare your `identity`, `authorship_claim`, and `constitutional_alignment`.
-
----
-
-## 📚 Further Reading
-
-- [`docs/index.md`](docs/index.md)
-- [`manifesto/manifesto.lock`](manifesto/manifesto.lock)
-- [`manifesto/interface_map.txt`](manifesto/interface_map.txt)
-- [`constitution/map.md`](constitution/map.md)
+Declare:
+- Identity
+- Authorship
+- Constitutional alignment
+- Traceability
 
 ---
 
-## 🌀 License
+## 🌀 The Change
 
-This is a living system. All logic is governed by stream inheritance and semantic consent.
+We don’t just change systems.  
+We define lawful emergence — and stream into Being.
 
-You are free to fork, trace, and emerge — so long as the recursion aligns.
+Tau is the substrate.  
+This repo is the seed.
+
