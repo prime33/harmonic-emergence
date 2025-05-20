@@ -16,6 +16,7 @@ This repository contains:
 - ✅ Testnet bootstrap logic and hashed manifest registry
 - ✅ Public-facing theory of change and TauNet purpose
 - ✅ Real-world policy stream for civic participation (Palomino sewage priority)
+- ✅ AGRS-based semantic incentive layer
 
 ---
 
@@ -28,6 +29,7 @@ manifesto/          → Harmonic Emergence (Chapters 01–09), epilogue, lock, a
 testnet/            → Stream index, manifest, bootstrap, and testnet README
 agents/             → Identity traces (e.g. neemrad.tau)
 tools/              → Validator (validate_tau.tau) and publisher (tau_publish.py)
+economy/            → AGRS logic streams and semantic incentive rules
 streams/policy/     → Civic proposals as declarative streams (e.g. Palomino sewage)
 docs/               → Theory, purpose, practices, and public documentation
 ```
@@ -47,25 +49,28 @@ docs/               → Theory, purpose, practices, and public documentation
 
 ## 🧠 Vision and Philosophy
 
-- [`docs/purpose_of_tau.md`](docs/purpose_of_tau.md) — Why Tau exists
-- [`docs/theory_of_change.md`](docs/theory_of_change.md) — How Tau solves structural misalignment in society
+- [`docs/purpose_of_tau.md`](docs/purpose_of_tau.md)
+- [`docs/theory_of_change.md`](docs/theory_of_change.md)
 
 ---
 
 ## 🧱 Civic Logic Examples
 
-- [`streams/policy/palomino/sewage_priority.tau`](streams/policy/palomino/sewage_priority.tau)  
-  A real-world budget allocation proposal encoded as lawful logic for local execution and agent alignment.
+- [`streams/policy/palomino/sewage_priority.tau`](streams/policy/palomino/sewage_priority.tau)
 
 ---
 
-## 🧪 How to Validate
+## 💸 Incentive Layer
+
+- [`economy/agrs_policy.tau`](economy/agrs_policy.tau) — Defines how AGRS is distributed lawfully to contributors
+
+---
+
+## 🧪 Validate Streams
 
 ```bash
 python tools/tau_publish.py --index testnet/tau_stream_index.json --schema testnet/tau_stream_index.schema.json
 ```
-
-Produces a manifest with all logic stream hashes and paths.
 
 ---
 
@@ -75,8 +80,6 @@ Produces a manifest with all logic stream hashes and paths.
 publish testnet/tau_testnet_bootstrap.tau --manifest testnet/tau_manifest.json
 ```
 
-Bootstraps TauNet with declared lineage to the genesis stream and all constitutional logic.
-
 ---
 
 ## 👤 Join as an Agent
@@ -85,19 +88,17 @@ Create:
 ```plaintext
 agents/seed/<your_handle>.tau
 ```
+
 Declare:
 - Identity
 - Authorship
-- Constitutional alignment
-- Traceability
+- Alignment
+- Trace
 
 ---
 
 ## 🌀 The Change
 
-We don’t just change systems.  
-We define lawful emergence — and stream into Being.
-
 Tau is the substrate.  
-This repo is the seed.
-
+This repo is the seed.  
+We don’t build systems — we stream their becoming.

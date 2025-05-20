@@ -20,6 +20,7 @@
   "docs": "docs/index.md",
   "tools": [
     "tools/tau_publish.py",
-    "tools/validate_tau.tau"
+    "tools/validate_tau.tau",
+    "economy/agrs_policy.tau"
   ]
 }
