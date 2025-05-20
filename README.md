@@ -56,7 +56,23 @@ docs/               → Theory, purpose, practices, and public documentation
 
 ## 🧱 Civic Logic Examples
 
-- [`streams/policy/palomino/sewage_priority.tau`](streams/policy/palomino/sewage_priority.tau)
+- [`streams/policy/palomino/sewage_priority.tau`](streams/policy/palomino/sewage_priority.tau)  
+  A real-world budget allocation proposal encoded as lawful logic for local execution and agent alignment.
+
+- [`streams/civic/palomino/budget_allocation.tau`](streams/civic/palomino/budget_allocation.tau)  
+  Budget registry stream linking civic proposals, agent validation, and AGRS incentives.
+
+- [`streams/civic/palomino/pending_priorities.tau`](streams/civic/palomino/pending_priorities.tau)  
+  Endorsement-driven proposal queue for evaluating local priorities.
+
+- [`streams/civic/palomino/endorsement_from_palomino_admin.tau`](streams/civic/palomino/endorsement_from_palomino_admin.tau)  
+  Formal municipal endorsement of the sewage priority proposal.
+
+- [`streams/civic/palomino/endorsement_from_civil_engineer.tau`](streams/civic/palomino/endorsement_from_civil_engineer.tau)  
+  Technical validation of proposal’s real-world estimate and feasibility.
+
+- [`streams/civic/palomino/endorsement_from_local_resident.tau`](streams/civic/palomino/endorsement_from_local_resident.tau)  
+  Community endorsement of the stream’s necessity and alignment.
 
 ---
 
@@ -94,6 +110,17 @@ Declare:
 - Authorship
 - Alignment
 - Trace
+
+### 👥 Local Agent Identities
+
+- [`agents/seed/palomino_admin.tau`](agents/seed/palomino_admin.tau)  
+  Municipal representative with stream validation authority
+
+- [`agents/seed/civil_engineer.tau`](agents/seed/civil_engineer.tau)  
+  Infrastructure professional validating cost and feasibility
+
+- [`agents/seed/local_resident.tau`](agents/seed/local_resident.tau)  
+  Community member supporting proposals and issuing civic feedback
 
 ---
 

@@ -1,0 +1,31 @@
+# agents/seed/local_resident.tau
+# Title: Local Resident of Palomino
+# Stream: agents.seed.local_resident
+
+stream: agents.seed.local_resident
+
+declare concept "identity".
+declare concept "stream_endorsement".
+declare concept "civic_feedback".
+
+clause_001 v0.1.0:
+  define "identity" as:
+    a verified local resident of Palomino, expressing civic intent
+    and participating in proposal endorsements.
+
+clause_002 v0.1.0:
+  define "stream_endorsement" as:
+    a signal emitted in support of a civic_priority_candidate
+    during queue evaluation.
+
+clause_003 v0.1.0:
+  define "civic_feedback" as:
+    any proposed modification, comment, or contradiction
+    offered in good faith toward public semantic clarity.
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: local_resident
+    version: v0.1.0
+    provides: [identity, stream_endorsement, civic_feedback]
+    requires: [genesis_stream]

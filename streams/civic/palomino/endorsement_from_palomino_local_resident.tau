@@ -1,0 +1,29 @@
+# streams/civic/palomino/endorsement_from_local_resident.tau
+# Title: Endorsement of Sewage Priority by Local Resident
+# Stream: streams.civic.palomino.endorsement_from_local_resident
+
+stream: streams.civic.palomino.endorsement_from_local_resident
+
+declare concept "stream_endorsement".
+declare concept "endorsed_stream".
+declare concept "endorsement_rationale".
+
+clause_001 v0.1.0:
+  define "stream_endorsement" as:
+    a public affirmation emitted by local_resident
+    in support of the stream `streams.policy.palomino.sewage_priority`.
+
+clause_002 v0.1.0:
+  define "endorsed_stream" as:
+    streams.policy.palomino.sewage_priority
+
+clause_003 v0.1.0:
+  define "endorsement_rationale" as:
+    endorses the sewage_priority stream as a public health and ecological necessity from community perspective.
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: endorsement_from_local_resident
+    version: v0.1.0
+    provides: [stream_endorsement, endorsed_stream, endorsement_rationale]
+    requires: [identity_trace, sewage_treatment, civic_priority]

@@ -1,0 +1,21 @@
+{
+  "civic_priority_stream": "streams/policy/palomino/sewage_priority.tau",
+  "proposer": "agents/seed/local_resident.tau",
+  "validators": [
+    "agents/seed/palomino_admin.tau",
+    "agents/seed/civil_engineer.tau"
+  ],
+  "endorsements": [
+    "streams/civic/palomino/endorsement_from_local_resident.tau",
+    "streams/civic/palomino/endorsement_from_palomino_admin.tau",
+    "streams/civic/palomino/endorsement_from_civil_engineer.tau"
+  ],
+  "queue_status": "active",
+  "budget_proposal_link": "streams/civic/palomino/budget_allocation.tau",
+  "requested_amount_usd": 38000,
+  "real_world_estimate_confirmed_by": [
+    "agents/seed/civil_engineer.tau"
+  ],
+  "AGRS_issued_on_approval": 500,
+  "version": "v0.1.0"
+}

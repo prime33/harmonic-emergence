@@ -1,0 +1,58 @@
+# streams/civic/palomino/pending_priorities.tau
+# Title: Pending Civic Priority Queue for Palomino (with Budget Integration)
+# Stream: streams.civic.palomino.pending_priorities
+
+stream: streams.civic.palomino.pending_priorities
+
+declare concept "priority_queue".
+declare concept "civic_priority_candidate".
+declare concept "endorsement_signal".
+declare concept "endorsement_count".
+declare concept "queue_status".
+declare concept "candidate_stream".
+declare concept "proposal_pipeline_entry".
+
+clause_001 v0.1.0:
+  define "civic_priority_candidate" as:
+    a logic stream tagged with civic_priority
+    awaiting review and endorsement by local agents.
+
+clause_002 v0.1.0:
+  define "endorsement_signal" as:
+    a declarative reference from an agent stream
+    in support of a candidate’s inclusion in active queue.
+
+clause_003 v0.1.0:
+  define "endorsement_count" as:
+    the running total of support signals per candidate stream.
+
+clause_004 v0.1.0:
+  define "priority_queue" as:
+    the ordered set of civic_priority_candidate streams
+    ranked by endorsement_count.
+
+clause_005 v0.1.0:
+  define "proposal_pipeline_entry" as:
+    a declaration that a candidate stream
+    has met review criteria and entered the budget_allocation pipeline.
+
+clause_006 v0.1.0:
+  if (
+    a candidate_stream reaches minimum threshold
+  )
+  then (
+    queue_status = active
+    and proposal_pipeline_entry is emitted
+    to streams.civic.palomino.budget_allocation
+  )
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: pending_priorities
+    version: v0.1.1
+    provides: [priority_queue, civic_priority_candidate, queue_status, proposal_pipeline_entry]
+    requires: [civic_priority, identity_trace, budget_proposal]
+
+interface:
+  provides: [priority_queue, civic_priority_candidate, queue_status, proposal_pipeline_entry]
+  requires: [civic_priority, identity_trace, budget_proposal]

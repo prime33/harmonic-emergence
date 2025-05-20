@@ -1,0 +1,30 @@
+# agents/seed/palomino_admin.tau
+# Title: Palomino Municipal Administrator
+# Stream: agents.seed.palomino_admin
+
+stream: agents.seed.palomino_admin
+
+declare concept "identity".
+declare concept "jurisdictional_scope".
+declare concept "stream_validation_authority".
+
+clause_001 v0.1.0:
+  define "identity" as:
+    palomino_admin — a declared municipal agent
+    authorized to verify civic streams and budget estimates.
+
+clause_002 v0.1.0:
+  define "jurisdictional_scope" as:
+    streams tagged under streams.civic.palomino.*
+
+clause_003 v0.1.0:
+  define "stream_validation_authority" as:
+    the ability to review, endorse, and confirm local estimates
+    relevant to Palomino’s infrastructure and civic requests.
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: palomino_admin
+    version: v0.1.0
+    provides: [identity, jurisdictional_scope, stream_validation_authority]
+    requires: [genesis_stream]

@@ -1,0 +1,70 @@
+# streams/civic/palomino/budget_allocation.tau
+# Title: Palomino Budget Allocation Registry (Extended)
+# Stream: streams.civic.palomino.budget_allocation
+
+stream: streams.civic.palomino.budget_allocation
+
+declare concept "civic_priority".
+declare concept "budget_amount".
+declare concept "budget_proposal".
+declare concept "budget_allocation_decision".
+declare concept "proposal_endorsement".
+declare concept "allocation_threshold".
+declare concept "jurisdictional_fund".
+declare concept "local_agent_identity".
+declare concept "agrs_reward".
+declare concept "real_world_estimate".
+
+clause_001 v0.1.0:
+  define "civic_priority" as:
+    any stream that addresses a public need,
+    and requests budget allocation for civic improvement.
+
+clause_002 v0.1.0:
+  define "budget_proposal" as:
+    a declared stream reference,
+    including requested amount, justification, impact summary,
+    and a real_world_estimate verified by one or more local_agent_identity streams.
+
+clause_003 v0.1.0:
+  define "proposal_endorsement" as:
+    a traceable identity signal affirming support
+    for a given budget_proposal based on semantic alignment.
+
+clause_004 v0.1.0:
+  define "allocation_threshold" as:
+    the declared number of endorsements or trust-score total
+    required for a budget proposal to be confirmed.
+
+clause_005 v0.1.0:
+  define "budget_allocation_decision" as:
+    the stream event that confirms allocation of resources
+    to a civic_priority after reaching allocation_threshold.
+
+clause_006 v0.1.0:
+  define "agrs_reward" as:
+    a proportional distribution of AGRS tokens
+    to identities involved in proposal drafting, endorsement, or validation
+    including at least one local_agent_identity.
+
+clause_007 v0.1.0:
+  if (
+    a budget_proposal reaches allocation_threshold
+    and real_world_estimate is confirmed by local_agent_identity
+  )
+  then (
+    budget_allocation_decision is issued,
+    agrs_reward is distributed,
+    and jurisdictional_fund is updated accordingly.
+  )
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: budget_allocation
+    version: v0.1.1
+    provides: [budget_proposal, budget_allocation_decision, proposal_endorsement, allocation_threshold, agrs_reward, real_world_estimate]
+    requires: [civic_priority, identity_trace, stream_registry, local_agent_identity, agrs]
+
+interface:
+  provides: [budget_proposal, budget_allocation_decision, proposal_endorsement, allocation_threshold, agrs_reward, real_world_estimate]
+  requires: [civic_priority, identity_trace, stream_registry, local_agent_identity, agrs]

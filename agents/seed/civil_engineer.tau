@@ -1,0 +1,30 @@
+# agents/seed/civil_engineer.tau
+# Title: Civil Engineer - Technical Validator
+# Stream: agents.seed.civil_engineer
+
+stream: agents.seed.civil_engineer
+
+declare concept "identity".
+declare concept "technical_validation".
+declare concept "stream_endorsement".
+
+clause_001 v0.1.0:
+  define "identity" as:
+    civil_engineer — a qualified agent able to assess infrastructure feasibility.
+
+clause_002 v0.1.0:
+  define "technical_validation" as:
+    the clause-level endorsement of real_world_estimate accuracy,
+    confirmed through professional judgment and local site review.
+
+clause_003 v0.1.0:
+  define "stream_endorsement" as:
+    the act of providing logical or professional support
+    to a stream seeking budget or civic priority status.
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: civil_engineer
+    version: v0.1.0
+    provides: [identity, technical_validation, stream_endorsement]
+    requires: [genesis_stream]

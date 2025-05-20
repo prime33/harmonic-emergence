@@ -1,0 +1,28 @@
+{
+  "policies": [
+    {
+      "stream": "streams/policy/palomino/sewage_priority.tau",
+      "title": "Sewage Treatment Priority for Palomino",
+      "jurisdiction": "Palomino",
+      "proposer": "agents/seed/local_resident.tau",
+      "status": "queued",
+      "linked_civic_processes": {
+        "queue": "streams/civic/palomino/pending_priorities.tau",
+        "allocation": "streams/civic/palomino/budget_allocation.tau",
+        "endorsements": [
+          "streams/civic/palomino/endorsement_from_local_resident.tau",
+          "streams/civic/palomino/endorsement_from_palomino_admin.tau",
+          "streams/civic/palomino/endorsement_from_civil_engineer.tau"
+        ],
+        "registry": "streams/civic/registry.json"
+      },
+      "requested_amount_usd": 38000,
+      "tags": [
+        "public_health",
+        "ecology",
+        "infrastructure"
+      ],
+      "version": "v0.1.0"
+    }
+  ]
+}
