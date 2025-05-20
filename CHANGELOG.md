@@ -4,6 +4,21 @@ All notable changes to this semantic corpus will be documented in this file.
 
 ---
 
+## [v0.1.3-civic-alignment] — 2025-05-19
+
+### ✅ Added
+- Agent streams: `palomino_admin`, `civil_engineer`, `local_resident`
+- Endorsement streams for `sewage_priority.tau` from all three agents
+- `streams/civic/pending_priorities.tau`: endorsement-based queue
+- `streams/civic/budget_allocation.tau`: allocation pipeline, AGRS incentives, real-world estimates
+- `streams/civic/registry.json`: maps civic lifecycle (queue, allocation, endorsement)
+- `streams/policy/registry.json`: maps declared policy to civic and funding status
+
+### 📝 Updated
+- `README.md`: added civic stream lifecycle, agent directory, and alignment pathways
+
+---
+
 ## [v0.1.1-civic] — 2025-05-17
 
 ### ✨ Added
