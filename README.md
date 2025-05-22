@@ -1,3 +1,5 @@
+![Tau Genesis Banner](https://github.com/prime33/tau-genesis/blob/main/docs/assets/cover.png)
+
 # Tau Network Genesis Repository
 
 Welcome to the **semantic source code of the Tau Network** — a self-amending, self-coherent universe of logic streams rooted in the *Autopoietic Logos* and guided by recursive law, agent traceability, and collective evolution.
