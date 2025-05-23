@@ -126,6 +126,16 @@ Declare:
 
 ---
 
+## 🧠 Transcompiler Module
+
+- [`transcompiler/`](transcompiler/) — From `.tau` to TML  
+  Tau's transcompiler bridges human semantics and executable logic.  
+  It converts clause-based `.tau` streams into propositional logic and ultimately TML-compatible Boolean expressions.
+
+This module is Tau's answer to Babel — a semantic engine that restores coherence between language and law.
+
+---
+
 ## 🌀 The Change
 
 Tau is the substrate.  
