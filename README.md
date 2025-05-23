@@ -19,6 +19,7 @@ This repository contains:
 - ✅ Public-facing theory of change and TauNet purpose
 - ✅ Real-world policy stream for civic participation (Palomino sewage priority)
 - ✅ AGRS-based semantic incentive layer
+- ✅ Transcompiler module for compiling .tau to executable TML logic
 
 ---
 
@@ -33,6 +34,7 @@ agents/             → Identity traces (e.g. neemrad.tau)
 tools/              → Validator (validate_tau.tau) and publisher (tau_publish.py)
 economy/            → AGRS logic streams and semantic incentive rules
 streams/policy/     → Civic proposals as declarative streams (e.g. Palomino sewage)
+transcompiler/      → Compiler logic to transform .tau semantics into Boolean expressions for TauLang
 docs/               → Theory, purpose, practices, and public documentation
 ```
 
