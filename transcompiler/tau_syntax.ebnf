@@ -1,0 +1,16 @@
+tau_stream     = "stream:" , identifier , "." , identifier , "." , identifier ;
+declaration    = "declare concept" , quoted_id , "." ;
+definition     = "define" , quoted_id , "as:" , clause_body ;
+clause         = "clause_" , digits , "v" , version , ":" , clause_body ;
+meta_block     = "meta:" , stream_metadata ;
+interface      = "interface:" , provides , requires ;
+
+quoted_id      = '"' , identifier , '"' ;
+identifier     = ? [a-zA-Z0-9_]+ ? ;
+digits         = ? [0-9]+ ? ;
+version        = digits , "." , digits , "." , digits ;
+
+clause_body    = ? ... complex text with logical structure ... ? ;
+stream_metadata = ? key:value pairs ... ? ;
+provides       = "[" , quoted_id , { "," , quoted_id } , "]" ;
+requires       = "[" , quoted_id , { "," , quoted_id } , "]" ;

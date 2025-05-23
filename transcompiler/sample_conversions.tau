@@ -1,0 +1,10 @@
+declare concept "civic_priority".
+declare concept "budget_allocation_decision".
+
+clause_001 v0.1.0:
+  if (
+    endorsement_count >= 3
+  )
+  then (
+    budget_allocation_decision is issued.
+  )
