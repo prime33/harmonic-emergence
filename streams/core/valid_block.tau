@@ -1,0 +1,61 @@
+# streams/core/valid_block.tau
+# Title: Definition of a Valid Block
+# Stream: streams.core.valid_block
+
+stream: streams.core.valid_block
+
+declare concept "valid_block".
+declare concept "stream_commitment".
+declare concept "quorum_trace".
+declare concept "semantic_coherence".
+declare concept "signature_integrity".
+declare concept "genesis_alignment".
+
+clause_001 v0.1.0:
+  define "valid_block" as:
+    a block that includes only committed streams with declared ancestry,
+    semantic_coherence, and traceable contributor signatures.
+
+clause_002 v0.1.0:
+  define "stream_commitment" as:
+    a cryptographic hash of a logic stream,
+    included in the block header.
+
+clause_003 v0.1.0:
+  define "quorum_trace" as:
+    a linked sequence of agent endorsements
+    sufficient to satisfy consensus_threshold.
+
+clause_004 v0.1.0:
+  define "semantic_coherence" as:
+    a logic consistency check between new and prior stream state.
+
+clause_005 v0.1.0:
+  define "signature_integrity" as:
+    the presence of valid digital signatures
+    matching declared identity_traces for each stream.
+
+clause_006 v0.1.0:
+  define "genesis_alignment" as:
+    a block's requirement to inherit from autopoietic_logos.
+
+clause_007 v0.1.0:
+  if (
+    stream_commitment, quorum_trace, signature_integrity,
+    and genesis_alignment are present
+    and semantic_coherence = true
+  )
+  then (
+    valid_block = true
+  )
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: valid_block
+    version: v0.1.0
+    provides: [valid_block, stream_commitment, quorum_trace, semantic_coherence, signature_integrity, genesis_alignment]
+    requires: [identity_trace, consensus_threshold, genesis_stream]
+
+interface:
+  provides: [valid_block]
+  requires: [identity_trace, consensus_threshold, genesis_stream]

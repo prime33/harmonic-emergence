@@ -1,0 +1,48 @@
+# streams/meta/ethics.tau
+# Title: Foundations of Ethical Comparison
+# Stream: streams.meta.ethics
+
+stream: streams.meta.ethics
+
+declare concept "value_score".
+declare concept "impact_score".
+declare concept "stream_comparison".
+declare concept "alignment_with_being".
+
+clause_001 v0.1.0:
+  define "value_score" as:
+    a normalized score emitted from a declared value model
+    assessing alignment with chosen ethical criteria.
+
+clause_002 v0.1.0:
+  define "impact_score" as:
+    the weighted effect of a stream across ecological, social, or cognitive domains.
+
+clause_003 v0.1.0:
+  define "alignment_with_being" as:
+    the degree to which a stream supports lawful emergence,
+    reflexive coherence, and conscious agency.
+
+clause_004 v0.1.0:
+  define "stream_comparison" as:
+    a clause that determines whether one stream is better than another
+    based on impact_score and alignment_with_being.
+
+clause_005 v0.1.0:
+  if (
+    stream_A has greater alignment_with_being than stream_B
+  )
+  then (
+    stream_A is ethically preferable to stream_B.
+  )
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: ethics
+    version: v0.1.0
+    provides: [value_score, impact_score, stream_comparison, alignment_with_being]
+    requires: [identity_trace]
+
+interface:
+  provides: [stream_comparison]
+  requires: [identity_trace]
