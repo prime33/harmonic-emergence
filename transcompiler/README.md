@@ -1,3 +1,4 @@
+![Transcompiler Banner](https://github.com/prime33/tau-genesis/blob/main/docs/assets/engine.png)
 # Tau Transcompiler — The Reconciliation of Tongues
 
 > “Come, let us go down, and there confound their language, that they may not understand one another's speech.”  
