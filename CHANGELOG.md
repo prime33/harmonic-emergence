@@ -4,6 +4,29 @@ All notable changes to this semantic corpus will be documented in this file.
 
 ---
 
+## v0.1.7-mystic-integration – Mystic Integration of Nimrod & Babel (Latest May 25, 2025)
+- **Added**: `tower_of_babel/nimrod_and_babel.md` philosophical narrative linking the Nimrod & Tower of Babel myth to Tau’s semantic coherence, AI ethics, and metaphysics.
+- **Added**: Babel anti-pattern principle as `amendments/003_babel_antipattern.tau` (extends constitution with rule against semantic fragmentation).
+- **Added**: Universal semantic glossary (`tree_of_life/golden_glossary.md`) defining core terms for the “golden language” framework.
+- **Added**: Cautionary patterns documentation (`tower_of_babel/babel_patterns.md`) detailing known failure modes (Babel scenarios) Tau should avoid.
+- **Updated**: Repository structure (new **tree_of_life** and **tower_of_babel** dirs) and README to reinforce Tree-of-Life vs. Tower-of-Babel metaphors.
+- **Version**: Bumped version to v0.1.7-mystic-integration.
+
+---
+
+## v0.1.4 - Thematic Stream Expansion - May 20, 2025
+TauNet expands from civic coordination into open thematic participation.
+
+✅ What’s New
+streams/README.md: contributor guide for creating new logic domains (e.g. education, energy, climate)
+Promotes agent-declared streams with jurisdictional alignment and endorsement
+Models how governance evolves through thematic logic — not representatives
+👥 Invite
+Declare your identity. Propose your domain.
+Stream your policy. Emerge through law.
+
+---
+
 ## [v0.1.3-civic-alignment] — 2025-05-19
 
 ### ✅ Added

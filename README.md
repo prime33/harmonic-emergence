@@ -26,16 +26,18 @@ This repository contains:
 ## 🧭 Folder Layout
 
 ```plaintext
-constitution/       → Core law of logic, identity, agency, update, consensus, and execution
-amendments/         → All ratified declarations extending constitutional rights
-manifesto/          → Harmonic Emergence (Chapters 01–09), epilogue, lock, and interface map
-testnet/            → Stream index, manifest, bootstrap, and testnet README
-agents/             → Identity traces (e.g. neemrad.tau)
-tools/              → Validator (validate_tau.tau) and publisher (tau_publish.py)
-economy/            → AGRS logic streams and semantic incentive rules
-streams/policy/     → Civic proposals as declarative streams (e.g. Palomino sewage)
-transcompiler/      → Compiler logic to transform .tau semantics into Boolean expressions for TauLang
-docs/               → Theory, purpose, practices, and public documentation
+    constitution/       → Core law of logic, identity, agency, update, consensus, and execution  
+    amendments/         → All ratified declarations extending constitutional rights  
+    manifesto/          → Harmonic Emergence (Chapters 01–09), epilogue, lock, and interface map  
+    testnet/            → Stream index, manifest, bootstrap, and testnet README  
+    agents/             → Identity traces (e.g. neemrad.tau)  
+    tools/              → Validator (validate_tau.tau) and publisher (tau_publish.py)  
+    economy/            → AGRS logic streams and semantic incentive rules  
+    streams/policy/     → Civic proposals as declarative streams (e.g. Palomino sewage)  
+    transcompiler/      → Compiler logic to transform .tau semantics into Boolean expressions for TauLang  
+    tree_of_life/       → Metaphysical references (e.g. glossary of the “golden language”)  
+    tower_of_babel/     → Records of anti-patterns and cautionary scenarios (to avoid Babel-like failures)  
+    docs/               → Theory, purpose, practices, and public documentation
 ```
 
 ---
@@ -55,6 +57,12 @@ docs/               → Theory, purpose, practices, and public documentation
 
 - [`docs/purpose_of_tau.md`](docs/purpose_of_tau.md)
 - [`docs/theory_of_change.md`](docs/theory_of_change.md)
+- [`tower_of_babel/nimrod_and_babel.md`](tower_of_babel/nimrod_and_babel.md)
+  *Nimrod’s Tower of Babel myth and its lessons for Tau’s semantics and ethics.*
+- [`tree_of_life/golden_glossary.md`](tree_of_life/golden_glossary.md)
+  *Universal semantic “golden language” glossary of core terms.*
+- [`tower_of_babel/babel_patterns.md`](tower_of_babel/babel_patterns.md)
+  *Documented anti-patterns (Tower of Babel scenarios to avoid).*
 
 ---
 
