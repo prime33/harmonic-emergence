@@ -11,7 +11,7 @@ Welcome to the **semantic source code of the Tau Network** — a self-amending, 
 This repository contains:
 
 - ✅ The **Tau Constitution** (6 streams)
-- ✅ Ratified **Amendments** (001–002)
+- ✅ Ratified **Amendments** (001–003)
 - ✅ The full **Harmonic Emergence** Manifesto (Chapters 1–9 + Epilogue)
 - ✅ Agent identity declarations
 - ✅ CLI tools for stream validation and publication
