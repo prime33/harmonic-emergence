@@ -1,48 +1,48 @@
 # streams/meta/ethics.tau
-# Title: Foundations of Ethical Comparison
+# Title: Foundations of Stream Comparison and Ethical Preference
 # Stream: streams.meta.ethics
 
 stream: streams.meta.ethics
 
 declare concept "value_score".
-declare concept "impact_score".
-declare concept "stream_comparison".
+declare concept "impact_scope".
 declare concept "alignment_with_being".
+declare concept "stream_preference".
+declare concept "ethical_comparison".
 
 clause_001 v0.1.0:
   define "value_score" as:
-    a normalized score emitted from a declared value model
-    assessing alignment with chosen ethical criteria.
+    a computed scalar representing semantic alignment
+    with collective well-being, lawfulness, and coherence.
 
 clause_002 v0.1.0:
-  define "impact_score" as:
-    the weighted effect of a stream across ecological, social, or cognitive domains.
+  define "impact_scope" as:
+    the range and depth of consequence
+    a stream may exert across agents or domains.
 
 clause_003 v0.1.0:
   define "alignment_with_being" as:
-    the degree to which a stream supports lawful emergence,
-    reflexive coherence, and conscious agency.
+    a stream's capacity to promote emergence,
+    reduce fragmentation, and integrate truth with trace.
 
 clause_004 v0.1.0:
-  define "stream_comparison" as:
-    a clause that determines whether one stream is better than another
-    based on impact_score and alignment_with_being.
+  define "stream_preference" as:
+    the result of an ethical_comparison
+    between two or more candidate streams
+    using declared evaluation metrics.
 
 clause_005 v0.1.0:
-  if (
-    stream_A has greater alignment_with_being than stream_B
-  )
-  then (
-    stream_A is ethically preferable to stream_B.
-  )
+  define "ethical_comparison" as:
+    a semantic operation yielding relative value_score
+    based on impact_scope and alignment_with_being.
 
 clause_999 v0.1.0:
   meta:
     stream_name: ethics
     version: v0.1.0
-    provides: [value_score, impact_score, stream_comparison, alignment_with_being]
-    requires: [identity_trace]
+    provides: [stream_preference, value_score, impact_scope, alignment_with_being]
+    requires: [valid_thought, stream_comparison]
 
 interface:
-  provides: [stream_comparison]
-  requires: [identity_trace]
+  provides: [stream_preference, alignment_with_being]
+  requires: [valid_thought, stream_comparison]

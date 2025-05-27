@@ -1,0 +1,49 @@
+# streams/core/valid_thought.tau
+# Title: Valid Thought — Semantic Integrity for Streamed Cognition
+# Stream: streams.core.valid_thought
+
+stream: streams.core.valid_thought
+
+declare concept "valid_thought".
+declare concept "thought_coherence".
+declare concept "thought_origin_trace".
+declare concept "reflexive_integrity".
+declare concept "semantic_containment".
+
+clause_001 v0.1.0:
+  define "valid_thought" as:
+    a statement or clause whose semantic structure
+    aligns with defined concepts, preserves origin trace,
+    and does not contradict prior reasoning unless explicitly amended.
+
+clause_002 v0.1.0:
+  define "thought_coherence" as:
+    logical consistency of the clause with its
+    declared upstream dependencies and definitions.
+
+clause_003 v0.1.0:
+  define "thought_origin_trace" as:
+    a semantic pointer to the agent or identity stream
+    that authored or amended the thought.
+
+clause_004 v0.1.0:
+  define "reflexive_integrity" as:
+    the clause’s ability to evaluate its own lineage,
+    coherence, and amendment status.
+
+clause_005 v0.1.0:
+  define "semantic_containment" as:
+    the principle that no thought may introduce terms
+    outside its declared `provides` or `requires` interface
+    without violating integrity.
+
+clause_999 v0.1.0:
+  meta:
+    stream_name: valid_thought
+    version: v0.1.0
+    provides: [valid_thought, thought_coherence, thought_origin_trace, reflexive_integrity, semantic_containment]
+    requires: [identity_trace, concept_definition]
+
+interface:
+  provides: [valid_thought]
+  requires: [identity_trace, concept_definition]
