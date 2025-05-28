@@ -1,46 +1,43 @@
-# Transcompiler Spec — TauLang Bridge Protocol
+# Tau Transcompiler Guide
 
-This document outlines the specification for converting `.tau` semantic streams into TauLang-executable Boolean logic.
-
----
-
-## 🎯 Purpose
-
-To allow `.tau` streams — written in declarative human-readable logic — to be compiled into `.tml` (Tau Meta Language) for execution and verification on TauNet.
+This guide outlines how the Tau transcompiler converts `.tau` logic streams into Boolean-valid Tau Meta-Language (TML).
 
 ---
 
-## 🧱 Key Translation Units
+## 🧠 Compiler Architecture
 
-| `.tau` Form                 | TML Equivalent                         |
-|-----------------------------|----------------------------------------|
-| declare concept "X".        | declare X                              |
-| define "X" as: Y            | X := Y                                 |
-| if (A) then (B)             | A → B                                  |
-| requires: [foo, bar]        | all inputs must satisfy foo ∧ bar      |
+1. **Parser**: Reads `.tau` syntax (`declare`, `define`, `clause`, `interface`)
+2. **Semantic Mapper**: Converts clause structures into logical trees
+3. **TML Generator**: Emits Horn clauses and TML-compliant Boolean structures
+4. **NSO Handler**: (Planned) Enables `{clause}` references for meta-logical statements
 
 ---
 
-## 🧠 Challenges
+## ✅ Supported .tau Clause Types
 
-- Handling conditionals with `therefore`
-- Tracing versioned clause ancestry
-- Mapping stream references to identifiers
-- Encoding `alignment_with_being` and value models
-
----
-
-## 🔁 Transcompiler Phases
-
-1. Parse `.tau` into AST of concepts, clauses, and metadata
-2. Resolve references and dependencies
-3. Emit propositional logic per clause
-4. Generate `.tml` block for executable inference
+| Pattern            | Compiles to TML |
+|--------------------|-----------------|
+| Implication        | Yes             |
+| Negation           | Yes             |
+| Conjunction        | Yes             |
+| Disjunction        | Via rewriting   |
+| Clause reference   | Soon (NSO)      |
 
 ---
 
-## 🗓️ Next Milestones
+## 🔁 Stream Coherence Criteria
 
-- [ ] Transcompile `rights_and_agency.tau`
-- [ ] Create clause diff visualizer
-- [ ] Link agent stream trace to compiled block
+A `.tau` stream is semantically coherent if:
+
+- All `provides` concepts are declared
+- No circular dependencies in `requires`
+- Each `clause` is logically satisfiable (non-contradictory)
+
+---
+
+## 🚧 TODO
+
+- Stream-to-TML converter prototype
+- NSO curly-brace `{...}` syntax support
+- Recursive clause expansion rules
+- Coherence scoring (trace, structure, ethics)

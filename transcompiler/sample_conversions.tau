@@ -1,10 +1,17 @@
-declare concept "civic_priority".
-declare concept "budget_allocation_decision".
+# sample_conversions.tau
+# Stream: transcompiler.tests.sample_conversions
+
+declare concept "example_input".
+declare concept "example_output".
 
 clause_001 v0.1.0:
-  if (
-    endorsement_count >= 3
-  )
-  then (
-    budget_allocation_decision is issued.
-  )
+  define "example_input" as:
+    condition_a and not condition_b implies conclusion_c.
+
+clause_002 v0.1.0:
+  define "example_output" as:
+    tml_rule::"conclusion_c() :- condition_a(), not condition_b()."
+
+interface:
+  provides: [example_input, example_output]
+  requires: []

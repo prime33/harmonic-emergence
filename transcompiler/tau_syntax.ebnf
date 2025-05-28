@@ -1,16 +1,24 @@
-tau_stream     = "stream:" , identifier , "." , identifier , "." , identifier ;
-declaration    = "declare concept" , quoted_id , "." ;
-definition     = "define" , quoted_id , "as:" , clause_body ;
-clause         = "clause_" , digits , "v" , version , ":" , clause_body ;
-meta_block     = "meta:" , stream_metadata ;
-interface      = "interface:" , provides , requires ;
+(* Tau Syntax Grammar (EBNF) *)
 
-quoted_id      = '"' , identifier , '"' ;
-identifier     = ? [a-zA-Z0-9_]+ ? ;
-digits         = ? [0-9]+ ? ;
-version        = digits , "." , digits , "." , digits ;
+stream       ::= "stream:" identifier
+clause_block ::= "clause_" number version? ":" clause_body
+clause_body  ::= "define" string "as:" logic_expr
+logic_expr   ::= implication
+implication  ::= disjunction ["implies" disjunction]
+disjunction  ::= conjunction {"or" conjunction}
+conjunction  ::= literal {"and" literal}
+literal      ::= identifier | "not" identifier | "(" logic_expr ")"
 
-clause_body    = ? ... complex text with logical structure ... ? ;
-stream_metadata = ? key:value pairs ... ? ;
-provides       = "[" , quoted_id , { "," , quoted_id } , "]" ;
-requires       = "[" , quoted_id , { "," , quoted_id } , "]" ;
+version      ::= "v" digit "." digit "." digit
+identifier   ::= ? letter followed by letters/numbers/underscores ?
+string       ::= '"' ? printable characters ? '"'
+number       ::= digit {digit}
+
+interface    ::= "interface:" interface_body
+interface_body ::= "provides:" list "requires:" list
+list         ::= "[" [identifier {"," identifier}] "]"
+
+meta_block   ::= "meta:" meta_fields
+meta_fields  ::= {identifier ":" value}
+value        ::= string | number | list
+
