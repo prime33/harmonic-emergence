@@ -1,17 +1,35 @@
-# tau_to_tml.py — Minimal Transcompiler Stub
+# tau_to_tml.py — Convert parsed Boolean ASTs into .tml rules
 
-def parse_tau_clause(clause_str):
-    """Placeholder: convert a .tau clause to internal logic structure."""
-    return {
-        "head": "conclusion_c()",
-        "body": ["condition_a()", "not condition_b()"]
+def emit_tml(ast, head="conclusion"):
+    """Convert a Boolean AST into a Tau Meta-Language (TML) rule."""
+    body = flatten_logic(ast)
+    return f"{normalize(head)}() :- {', '.join(body)}."
+
+def flatten_logic(ast):
+    """Flatten AST into a list of TML logic body components."""
+    if isinstance(ast, str):
+        return [normalize(ast)]
+    elif isinstance(ast, dict):
+        if "not" in ast:
+            return [f"not {normalize(ast['not'])}"]
+        elif "and" in ast:
+            return [item for part in ast["and"] for item in flatten_logic(part)]
+        elif "or" in ast:
+            return [f"({ ' ; '.join(flatten_logic(p)) })" for p in ast["or"]]
+        elif "implies" in ast:
+            return flatten_logic(ast["implies"]["if"])
+    return []
+
+def normalize(symbol):
+    return symbol.strip().lower().replace("`", "").replace(",", "").replace(".", "")
+
+# Example usage
+if __name__ == "__main__":
+    sample_ast = {
+        "implies": {
+            "if": ["condition_a", {"not": "condition_b"}],
+            "then": "conclusion_c"
+        }
     }
 
-def emit_tml(rule_obj):
-    """Emit TML rule from parsed logic structure."""
-    return f"{rule_obj['head']} :- {', '.join(rule_obj['body'])}."
-
-if __name__ == "__main__":
-    sample = "condition_a and not condition_b implies conclusion_c."
-    rule = parse_tau_clause(sample)
-    print(emit_tml(rule))
+    print(emit_tml(sample_ast, head=sample_ast["implies"]["then"]))
