@@ -4,6 +4,26 @@ All notable changes to this semantic corpus will be documented in this file.
 
 ---
 
+## [v0.1.8-transcompile-alpha] - 2025-05-28
+
+### Added
+- `parser.py`: Now builds Boolean Abstract Syntax Trees (ASTs) from `.tau` clause logic
+- `tau_to_tml.py`: Emits Tau Meta-Language (TML) rules from structured ASTs
+- Integrated transcompiler bridge: `.tau` clause ➝ parsed AST ➝ generated `.tml` rule
+
+### Improved
+- Stream parsing accuracy for logical keywords (`and`, `or`, `not`, `implies`)
+- Clause header extraction and concept naming consistency
+
+### Next
+- Normalize logic symbols and punctuation
+- Expand `or` into multiple `.tml` rules
+- Formalize multi-clause compilation and test suite in `transcompiler-tests/`
+
+> This release enables the first complete logic stream to code transformation pipeline in Tau Genesis.
+
+---
+
 ## v0.1.7-mystic-integration – Mystic Integration of Nimrod & Babel (Latest May 25, 2025)
 - **Added**: `tower_of_babel/nimrod_and_babel.md` philosophical narrative linking the Nimrod & Tower of Babel myth to Tau’s semantic coherence, AI ethics, and metaphysics.
 - **Added**: Babel anti-pattern principle as `amendments/003_babel_antipattern.tau` (extends constitution with rule against semantic fragmentation).
