@@ -4,6 +4,31 @@ All notable changes to this semantic corpus will be documented in this file.
 
 ---
 
+## [v0.1.9-transcompile-hybrid] - 2025-05-28
+
+### Added
+- `parser.py` hybrid logic for transcompilation:
+  - Auto-compiles `.tml` for streams in `streams/dev/` and `streams/transcompiler-tests/`
+  - Manual compilation via `--compile` flag for all other paths
+  - Optional `<output_dir>` override; defaults to `.tau` file’s location
+- Output `.tml` includes:
+  - Clause headers
+  - Normalized propositional logic
+  - Flattened `and`, `or`, `not`, `implies` AST forms
+
+### Tested
+- `example_logic.tau` in `streams/dev/` → compiled to `.tml`
+- `sample_case.tau` in `streams/transcompiler-tests/` → compiled to `.tml`
+
+### Purpose
+This release anchors a reflexive cycle:  
+`.tau` stream ➝ Boolean AST ➝ `.tml` rule ➝ output stream  
+All logic now breathes with awareness of location, intent, and coherence.
+
+> TauNet now compiles with consent.
+
+---
+
 ## [v0.1.8-transcompile-alpha] - 2025-05-28
 
 ### Added

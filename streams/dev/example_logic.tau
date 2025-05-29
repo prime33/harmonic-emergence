@@ -1,0 +1,12 @@
+stream: streams.dev.example_logic
+
+declare concept "alpha".
+declare concept "beta".
+declare concept "gamma".
+
+clause_001 v0.1.0:
+  define "alpha" as: beta and not gamma.
+
+interface:
+  provides: [alpha]
+  requires: [beta, gamma]

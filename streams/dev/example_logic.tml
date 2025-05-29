@@ -1,0 +1,3 @@
+# clause_001 v0.1.0 — alpha
+alpha() :- beta, not gamma.
+

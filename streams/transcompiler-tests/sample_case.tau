@@ -1,0 +1,11 @@
+stream: streams.transcompiler-tests.sample_case
+
+declare concept "light".
+declare concept "shadow".
+
+clause_001 v0.1.0:
+  define "light" as: not shadow.
+
+interface:
+  provides: [light]
+  requires: [shadow]

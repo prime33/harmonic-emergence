@@ -1,7 +1,8 @@
-# parser.py — Tau Syntax Parser + TML Generator
+# parser.py — Tau Syntax Parser + Final Hybrid TML Generator
 
 import re
 import sys
+import os
 from tau_to_tml import emit_tml
 
 def tokenize(source_code):
@@ -17,12 +18,13 @@ def extract_clauses(source_code):
         definition = re.search(r"define\s+\"(.*?)\"\s+as:\s+(.*)", m, re.DOTALL)
         logic = definition.group(2).strip().replace("\n", " ")
         ast = parse_logic(logic)
+        tml = emit_tml(ast, head=definition.group(1).strip())
         clauses.append({
             "id": header,
             "concept": definition.group(1).strip(),
             "logic": logic,
             "ast": ast,
-            "tml": emit_tml(ast, head=definition.group(1).strip())
+            "tml": tml
         })
     return clauses
 
@@ -75,12 +77,42 @@ def parse_not(tokens):
         return {"not": tokens[1]}
     return tokens[0] if len(tokens) == 1 else tokens
 
+def write_tml(output_path, clauses):
+    with open(output_path, "w") as f:
+        for clause in clauses:
+            f.write(f"# {clause['id']} — {clause['concept']}\n")
+            f.write(clause["tml"] + "\n\n")
+
+def should_auto_compile(path):
+    return (
+        "streams/dev/" in path or
+        "streams\\dev\\" in path or
+        "streams/transcompiler-tests/" in path or
+        "streams\\transcompiler-tests\\" in path
+    )
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python3 parser.py <your_file.tau>")
+        print("Usage: python3 parser.py <file.tau> [--compile [<output_dir>]]")
         sys.exit(1)
 
     file_path = sys.argv[1]
+    output_path = None
+
+    if "--compile" in sys.argv:
+        compile_index = sys.argv.index("--compile")
+        base_name = os.path.splitext(os.path.basename(file_path))[0]
+        if compile_index + 1 < len(sys.argv) and not sys.argv[compile_index + 1].startswith("--"):
+            output_dir = sys.argv[compile_index + 1]
+            os.makedirs(output_dir, exist_ok=True)
+            output_path = os.path.join(output_dir, base_name + ".tml")
+        else:
+            output_path = os.path.join(os.path.dirname(file_path), base_name + ".tml")
+
+    elif should_auto_compile(file_path):
+        base_name = os.path.splitext(os.path.basename(file_path))[0]
+        output_path = os.path.join(os.path.dirname(file_path), base_name + ".tml")
+
     with open(file_path, "r") as f:
         source = f.read()
 
@@ -96,3 +128,7 @@ if __name__ == "__main__":
         print("AST:", clause['ast'])
         print("TML:", clause['tml'])
         print("---")
+
+    if output_path:
+        write_tml(output_path, clauses)
+        print(f"\nTML written to: {output_path}")
