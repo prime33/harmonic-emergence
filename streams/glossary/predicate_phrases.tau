@@ -1,0 +1,56 @@
+stream: streams.glossary.predicate_phrases
+
+title: Controlled Semantic Phrases
+description: Maps expressive human phrases to structured predicates for TML generation.
+
+declare concept "phrase_mapping".
+declare concept "semantic_relation".
+declare concept "logic_pattern".
+declare concept "predicate_alias".
+
+clause_001 v0.1.0:
+  define "phrase_mapping" as:
+    a declarative entry that links a human-readable phrase
+    to a machine-readable predicate for logic compilation.
+
+clause_002 v0.1.0:
+  define "semantic_relation" as:
+    a phrase mapping that expresses a state or condition
+    to be treated as a logical predicate.
+
+clause_003 v0.1.0:
+  define "logic_pattern" as:
+    a phrase mapping that conveys a logical operation
+    or relation between components in a clause.
+
+clause_004 v0.1.0:
+  define "predicate_alias" as:
+    a normalized predicate representation used during transcompilation.
+
+clause_005 v0.1.0:
+  phrase_mapping:
+    phrase: "preserves origin trace"
+    alias: "preserves_origin_trace"
+    type: semantic_relation
+
+clause_006 v0.1.0:
+  phrase_mapping:
+    phrase: "aligns with defined concepts"
+    alias: "aligns_with_defined_concepts"
+    type: semantic_relation
+
+clause_007 v0.1.0:
+  phrase_mapping:
+    phrase: "does not contradict"
+    alias: "not contradiction"
+    type: logic_pattern
+
+clause_008 v0.1.0:
+  phrase_mapping:
+    phrase: "introduce terms"
+    alias: "introduce_terms"
+    type: semantic_relation
+
+interface:
+  provides: [phrase_mapping, predicate_alias, semantic_relation, logic_pattern]
+  requires: []
