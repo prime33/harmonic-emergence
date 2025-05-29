@@ -1,18 +1,16 @@
-# tau_to_tml.py — Phrase-Aware Tau Meta-Language Emitter (N-Gram Matching)
+import json
+import os
 
-PHRASE_MAP = {
-    "preserves origin trace": "preserves_origin_trace",
-    "aligns with defined concepts": "aligns_with_defined_concepts",
-    "semantic structure": "semantic_structure",
-    "prior reasoning": "prior_reasoning",
-    "amendment status": "amendment_status",
-    "thought coherence": "thought_coherence",
-    "origin trace": "origin_trace",
-    "reflexive integrity": "reflexive_integrity",
-    "introduce terms": "introduce_terms",
-    "violating integrity": "violating_integrity",
-    "provides or requires interface": "provides_or_requires_interface"
-}
+GLOSSARY_PATH = "streams/glossary/phrases_index.json"
+
+def load_phrase_map():
+    if os.path.exists(GLOSSARY_PATH):
+        with open(GLOSSARY_PATH) as f:
+            return json.load(f)
+    else:
+        return {}
+
+PHRASE_MAP = load_phrase_map()
 
 def emit_tml(ast, head="conclusion", var="X"):
     body_lines = flatten_logic(ast, var)
@@ -42,22 +40,34 @@ def group_phrases(tokens, var):
     lines = []
     i = 0
     while i < len(tokens):
+        token = tokens[i]
+
+        if isinstance(token, list):
+            # recurse on nested list
+            lines.extend(group_phrases(token, var))
+            i += 1
+            continue
+
         match = None
         max_len = 0
-        # Try 3-gram, 2-gram, then 1
+
         for size in (3, 2, 1):
             if i + size <= len(tokens):
-                phrase = " ".join(tokens[i:i+size])
-                if phrase in PHRASE_MAP:
-                    match = PHRASE_MAP[phrase]
-                    max_len = size
-                    break
+                phrase_tokens = tokens[i:i+size]
+                if all(isinstance(t, str) for t in phrase_tokens):
+                    phrase = " ".join(phrase_tokens)
+                    if phrase in PHRASE_MAP:
+                        match = PHRASE_MAP[phrase]
+                        max_len = size
+                        break
+
         if match:
             lines.append(f"{match}({var})")
             i += max_len
         else:
-            lines.append(symbol_to_predicate(tokens[i], var))
+            lines.append(symbol_to_predicate(token, var))
             i += 1
+
     return lines
 
 def symbol_to_predicate(symbol, var):
@@ -76,17 +86,3 @@ def normalize(symbol):
               .strip()
               .replace(" ", "_")
     )
-
-# Example usage
-if __name__ == "__main__":
-    sample_ast = {
-        "implies": {
-            "if": [
-                "preserves", "origin", "trace",
-                {"not": "contradiction"},
-                "aligns", "with", "defined", "concepts"
-            ],
-            "then": "valid_thought"
-        }
-    }
-    print(emit_tml(sample_ast["implies"], head=sample_ast["implies"]["then"]))
