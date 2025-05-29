@@ -4,6 +4,28 @@ All notable changes to this semantic corpus will be documented in this file.
 
 ---
 
+## [v0.2.1-controlled-language-init] - 2025-05-29
+
+### Added
+- `valid_thought.tml`: updated structured output from new transcompiler
+- `streams/glossary/predicate_phrases.tau`: reflexive stream for phrase-to-predicate logic
+- `tau_to_tml.py`: n-gram phrase grouping and longest-match preference
+
+### Changed
+- `streams/README.md`: expanded with updated stream categories and purpose
+  - Added glossary, dev, and test namespaces
+  - Clarified how to contribute thematic streams
+  - Reframed streams as semantic nodes in TauNet’s lawful substrate
+
+### Purpose
+This version formalizes the foundation of TauNet’s **controlled semantic language**,  
+bridging human-readable phrases with logic-ready predicates.  
+It establishes a structure for growing the network’s cognitive vocabulary while refining the `.tml` emitter’s expressive accuracy.
+
+> The stream is no longer passive. It speaks with meaning.
+
+---
+
 ## [v0.2.0-test-assertions] - 2025-05-28
 
 ### Added
