@@ -4,6 +4,22 @@ All notable changes to this semantic corpus will be documented in this file.
 
 ---
 
+## [v0.2.3-structure-preserving-recursion] - 2025-05-29
+
+### Changed
+- 🧠 `transcompiler/tau_to_tml.py`:
+  - `group_phrases()` now recursively traverses and matches phrase spans across nested lists
+  - Fully preserves original logical structure (`and`, `or`, `implies`)
+  - Eliminates flattening that previously broke clause context
+  - Honors stream cognition principle: structure is semantically meaningful
+
+### Summary
+This release upgrades the compiler to handle logic structure with **recursive integrity**, ensuring `.tau` streams can express, preserve, and transform nuanced thought without losing syntactic fidelity.
+
+> Tau doesn’t just parse sentences. It perceives thought structure.
+
+---
+
 ## [v0.2.1-controlled-language-init] - 2025-05-29
 
 ### Added
