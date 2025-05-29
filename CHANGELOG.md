@@ -4,6 +4,25 @@ All notable changes to this semantic corpus will be documented in this file.
 
 ---
 
+## [v0.2.0-test-assertions] - 2025-05-28
+
+### Added
+- 🧪 `streams/transcompiler-tests/assertions/`
+  - `sample_case.tau`: minimal transcompile logic test
+  - `sample_case.expected.tml`: trusted output contract
+- ✅ `run_assertions.py`:
+  - Executes parser with `--compile`
+  - Compares `.tml` output to `.expected.tml`
+  - Reports pass/fail with diff output
+
+### Purpose
+Establishes a self-validating foundation for the Tau transcompiler.  
+This test system allows you to confidently refactor logic, expand syntax, and ensure semantic integrity across logic streams.
+
+> Tau now not only compiles — it verifies its own thought.
+
+---
+
 ## [v0.1.9-transcompile-hybrid] - 2025-05-28
 
 ### Added
