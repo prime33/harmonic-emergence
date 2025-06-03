@@ -1,0 +1,18 @@
+shared_glossary_requirement(X) :-
+  term_introduced(X),
+  must_define_in_glossary(X),
+  ensures_semantic_uniformity(X).
+
+semantic_alignment_duty(X) :-
+  must_align_with_semantic_framework(X),
+  resolves_semantic_ambiguity(X),
+  uses_consensual_resolution(X).
+
+prohibition_of_obfuscation(X) :-
+  introduces_semantic_confusion(X),
+  prohibits_semantic_isolation(X).
+
+coherence_audit_process(X) :-
+  detects_semantic_drift(X),
+  initiates_reconciliation(X),
+  restores_unified_meaning(X).

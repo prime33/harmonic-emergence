@@ -1,0 +1,25 @@
+semantic_resonance(X) :-
+  diverging_forms(X),
+  maintains_meaning_alignment(X).
+
+integration(X) :-
+  resolves_semantic_divergence(X),
+  harmonizes_while_preserving_origin(X).
+
+coherence_preservation(X) :-
+  preserves_logical_lineage(X),
+  allows_explicit_divergence(X).
+
+contradiction_as_invitation(X) :-
+  contradiction_triggers_synthesis(X),
+  discourages_fragmentation(X).
+
+alignment_cycle(X) :-
+  contradiction_initiates_dialogue(X),
+  seeks_semantic_convergence(X),
+  restores_logical_harmony(X).
+
+contradiction_mediation(X) :-
+  contradiction_detected(X),
+  mandates_alignment_cycle(X),
+  prioritize_resonance_over_escape(X).

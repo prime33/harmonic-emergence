@@ -1,0 +1,49 @@
+clause_001 v0.1.0:
+  stream_name: shared_glossary_requirement
+  description: All new terms must be defined in or mapped to the universal semantic glossary to ensure network-wide clarity.
+  phrase_predicates:
+    - "new term or concept introduced into Tau" : term_introduced
+    - "must be defined in universal semantic glossary" : must_define_in_glossary
+    - "ensure understood uniformly across network" : ensures_semantic_uniformity
+
+clause_002 v0.1.0:
+  stream_name: semantic_alignment_duty
+  description: All agents must align contributions to Tau’s shared semantic framework; ambiguities must be resolved by consensus.
+  phrase_predicates:
+    - "agents have a duty to align contributions" : must_align_with_semantic_framework
+    - "contradictions or ambiguities in language must be resolved" : resolves_semantic_ambiguity
+    - "through consensus clarification or formal amendment" : uses_consensual_resolution
+
+clause_003 v0.1.0:
+  stream_name: prohibition_of_obfuscation
+  description: Deliberate obfuscation or creation of incompatible sub-languages is unconstitutional and prohibited.
+  phrase_predicates:
+    - "intentionally introduce language or logic that creates confusion" : introduces_semantic_confusion
+    - "willful creation of incompatible sub-languages is prohibited" : prohibits_semantic_isolation
+
+clause_004 v0.1.0:
+  stream_name: coherence_audit_process
+  description: Tau must include ongoing semantic drift detection and reconciliation to uphold coherence.
+  phrase_predicates:
+    - "system shall detect and address semantic drift" : detects_semantic_drift
+    - "reconciliation process must be initiated" : initiates_reconciliation
+    - "to re-establish one coherent usage" : restores_unified_meaning
+
+meta:
+  stream_name: babel_antipattern_principle
+  provides: [
+    shared_glossary_requirement,
+    semantic_alignment_duty,
+    prohibition_of_obfuscation,
+    coherence_audit_process
+  ]
+  requires: [universal_glossary, agent_stream, amendment_protocol]
+
+interface:
+  provides: [
+    shared_glossary_requirement,
+    semantic_alignment_duty,
+    prohibition_of_obfuscation,
+    coherence_audit_process
+  ]
+  requires: [universal_glossary, agent_stream, amendment_protocol]

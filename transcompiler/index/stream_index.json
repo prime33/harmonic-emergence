@@ -52,5 +52,65 @@
     "provided_by": [
       "clause_004"
     ]
+  },
+  "semantic_resonance": {
+    "description": "The condition in which multiple streams, though different in form, sustain compatibility in meaning and direction.",
+    "provided_by": [
+      "clause_001"
+    ]
+  },
+  "integration": {
+    "description": "The ongoing act of reconciling contradiction, overlap, or drift into a shared rhythm without suppressing origin.",
+    "provided_by": [
+      "clause_002"
+    ]
+  },
+  "coherence_preservation": {
+    "description": "Each stream must remain logically compatible with its ancestry unless a justified break is declared.",
+    "provided_by": [
+      "clause_003"
+    ]
+  },
+  "contradiction_as_invitation": {
+    "description": "Semantic conflict is a signal for synthesis, not separation.",
+    "provided_by": [
+      "clause_004"
+    ]
+  },
+  "alignment_cycle": {
+    "description": "The pattern by which contradiction leads to dialogue, shared understanding, and coherence restoration.",
+    "provided_by": [
+      "clause_005"
+    ]
+  },
+  "contradiction_mediation": {
+    "description": "When contradiction arises between streams, alignment_cycle must occur before divergence. Semantic resonance is prioritized.",
+    "provided_by": [
+      "clause_006"
+    ]
+  },
+  "shared_glossary_requirement": {
+    "description": "All new terms must be defined in or mapped to the universal semantic glossary to ensure network-wide clarity.",
+    "provided_by": [
+      "clause_001"
+    ]
+  },
+  "semantic_alignment_duty": {
+    "description": "All agents must align contributions to Tau\u2019s shared semantic framework; ambiguities must be resolved by consensus.",
+    "provided_by": [
+      "clause_002"
+    ]
+  },
+  "prohibition_of_obfuscation": {
+    "description": "Deliberate obfuscation or creation of incompatible sub-languages is unconstitutional and prohibited.",
+    "provided_by": [
+      "clause_003"
+    ]
+  },
+  "coherence_audit_process": {
+    "description": "Tau must include ongoing semantic drift detection and reconciliation to uphold coherence.",
+    "provided_by": [
+      "clause_004"
+    ]
   }
 }
