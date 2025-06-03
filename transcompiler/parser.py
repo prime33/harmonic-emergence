@@ -1,134 +1,95 @@
-# parser.py — Tau Syntax Parser + Final Hybrid TML Generator
-
 import re
-import sys
+import json
 import os
-from tau_to_tml import emit_tml
+import argparse
+from pathlib import Path
 
-def tokenize(source_code):
-    tokens = re.findall(r'"[^"]*"|\b(?:stream|clause_\d+|define|as|and|or|not|implies|interface|provides|requires)\b|[a-zA-Z_][a-zA-Z0-9_]*|[\[\](){}.,:]', source_code)
-    return tokens
+def parse_tau_v3_clause(text):
+    lines = text.strip().splitlines()
+    head = None
+    phrases = []
+    clause_name = lines[0].split()[0].strip(" ")
+    description = ""
+    for line in lines:
+        if line.strip().startswith("stream_name"):
+            head = line.split(":", 1)[1].strip()
+        elif line.strip().startswith("description"):
+            description = line.split(":", 1)[1].strip()
+        elif ":" in line and "phrase_predicates" not in line:
+            phrase, pred = line.split(":", 1)
+            phrases.append((phrase.strip().strip('-" '), pred.strip()))
+    return clause_name, head, description, phrases
 
-def extract_clauses(source_code):
-    pattern = r"(clause_\d+ v[0-9.]+:\s+define\s+\".*?\"\s+as:\s+.*?)(?=\nclause_|\ninterface|\Z)"
-    matches = re.findall(pattern, source_code, re.DOTALL)
-    clauses = []
-    for m in matches:
-        header = re.search(r"(clause_\d+ v[0-9.]+):", m).group(1)
-        definition = re.search(r"define\s+\"(.*?)\"\s+as:\s+(.*)", m, re.DOTALL)
-        logic = definition.group(2).strip().replace("\n", " ")
-        ast = parse_logic(logic)
-        tml = emit_tml(ast, head=definition.group(1).strip())
-        clauses.append({
-            "id": header,
-            "concept": definition.group(1).strip(),
-            "logic": logic,
-            "ast": ast,
-            "tml": tml
-        })
-    return clauses
+def emit_tml_from_phrases(head, phrases, var="X"):
+    if not phrases:
+        return None
+    body = [f"{pred}({var})" for _, pred in phrases]
+    return f"{head}({var}) :-\n  " + ",\n  ".join(body) + "."
 
-def parse_logic(expr):
-    expr = expr.replace("(", " ( ").replace(")", " ) ").strip()
-    tokens = expr.split()
-    return parse_implication(tokens)
+def update_indexes(clause_name, stream_name, description, phrases):
+    os.makedirs("index", exist_ok=True)
 
-def parse_implication(tokens):
-    if "implies" in tokens:
-        i = tokens.index("implies")
-        return {
-            "implies": {
-                "if": parse_or(tokens[:i]),
-                "then": parse_or(tokens[i+1:])
-            }
+    stream_index_path = Path("index/stream_index.json")
+    glossary_path = Path("index/glossary.json")
+
+    if stream_index_path.exists():
+        with open(stream_index_path) as f:
+            stream_index = json.load(f)
+    else:
+        stream_index = {}
+
+    if glossary_path.exists():
+        with open(glossary_path) as f:
+            glossary = json.load(f)
+    else:
+        glossary = {}
+
+    if stream_name not in stream_index:
+        stream_index[stream_name] = {
+            "description": description,
+            "provided_by": []
         }
-    return parse_or(tokens)
+    if clause_name not in stream_index[stream_name]["provided_by"]:
+        stream_index[stream_name]["provided_by"].append(clause_name)
 
-def parse_or(tokens):
-    if "or" in tokens:
-        parts = []
-        current = []
-        for token in tokens:
-            if token == "or":
-                parts.append(parse_and(current))
-                current = []
-            else:
-                current.append(token)
-        parts.append(parse_and(current))
-        return {"or": parts}
-    return parse_and(tokens)
+    for phrase, pred in phrases:
+        glossary[phrase] = pred
 
-def parse_and(tokens):
-    if "and" in tokens:
-        parts = []
-        current = []
-        for token in tokens:
-            if token == "and":
-                parts.append(parse_not(current))
-                current = []
-            else:
-                current.append(token)
-        parts.append(parse_not(current))
-        return {"and": parts}
-    return parse_not(tokens)
+    with open(stream_index_path, "w") as f:
+        json.dump(stream_index, f, indent=2)
 
-def parse_not(tokens):
-    if tokens and tokens[0] == "not":
-        return {"not": tokens[1]}
-    return tokens[0] if len(tokens) == 1 else tokens
+    with open(glossary_path, "w") as f:
+        json.dump(glossary, f, indent=2)
 
-def write_tml(output_path, clauses):
-    with open(output_path, "w") as f:
-        for clause in clauses:
-            f.write(f"# {clause['id']} — {clause['concept']}\n")
-            f.write(clause["tml"] + "\n\n")
+def compile_tau_file(file_path, emit_index=True):
+    with open(file_path) as f:
+        tau = f.read()
 
-def should_auto_compile(path):
-    return (
-        "streams/dev/" in path or
-        "streams\\dev\\" in path or
-        "streams/transcompiler-tests/" in path or
-        "streams\\transcompiler-tests\\" in path
-    )
+    all_clauses = tau.strip().split("\n\n")
+    tml_out = []
+
+    for block in all_clauses:
+        if block.startswith("clause_") and "meta" not in block:
+            clause_name, stream_name, description, phrases = parse_tau_v3_clause(block)
+            if emit_index:
+                update_indexes(clause_name, stream_name, description, phrases)
+            tml = emit_tml_from_phrases(stream_name, phrases)
+            if tml:
+                tml_out.append((stream_name, tml))
+
+    return tml_out
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python3 parser.py <file.tau> [--compile [<output_dir>]]")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description="Tau Transcompiler v3")
+    parser.add_argument("file", help="Path to .tau stream")
+    parser.add_argument("--compile", action="store_true", help="Compile stream to TML")
+    args = parser.parse_args()
 
-    file_path = sys.argv[1]
-    output_path = None
-
-    if "--compile" in sys.argv:
-        compile_index = sys.argv.index("--compile")
-        base_name = os.path.splitext(os.path.basename(file_path))[0]
-        if compile_index + 1 < len(sys.argv) and not sys.argv[compile_index + 1].startswith("--"):
-            output_dir = sys.argv[compile_index + 1]
-            os.makedirs(output_dir, exist_ok=True)
-            output_path = os.path.join(output_dir, base_name + ".tml")
-        else:
-            output_path = os.path.join(os.path.dirname(file_path), base_name + ".tml")
-
-    elif should_auto_compile(file_path):
-        base_name = os.path.splitext(os.path.basename(file_path))[0]
-        output_path = os.path.join(os.path.dirname(file_path), base_name + ".tml")
-
-    with open(file_path, "r") as f:
-        source = f.read()
-
-    tokens = tokenize(source)
-    print("Tokens:", tokens)
-    print()
-
-    clauses = extract_clauses(source)
-    for clause in clauses:
-        print(f"Clause ID: {clause['id']}")
-        print(f"Concept: {clause['concept']}")
-        print(f"Logic: {clause['logic']}")
-        print("AST:", clause['ast'])
-        print("TML:", clause['tml'])
-        print("---")
-
-    if output_path:
-        write_tml(output_path, clauses)
-        print(f"\nTML written to: {output_path}")
+    if args.compile:
+        results = compile_tau_file(args.file)
+        for stream_name, tml in results:
+            print(tml + "\n")
+            out_path = Path(args.file).with_suffix(".tml")
+            with open(out_path, "w") as f:
+                f.write(tml + "\n")
+            print(f"[✓] TML written to {out_path}")

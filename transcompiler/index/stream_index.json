@@ -1,0 +1,32 @@
+{
+  "valid_thought": {
+    "description": "A thought is valid if it preserves coherence, origin, and amendment lineage.",
+    "provided_by": [
+      "clause_001"
+    ]
+  },
+  "thought_coherence": {
+    "description": "Thought must align logically with its upstream dependencies.",
+    "provided_by": [
+      "clause_002"
+    ]
+  },
+  "thought_origin_trace": {
+    "description": "Valid thoughts must carry their authorship lineage.",
+    "provided_by": [
+      "clause_003"
+    ]
+  },
+  "reflexive_integrity": {
+    "description": "The thought can evaluate its own coherence and amendment status.",
+    "provided_by": [
+      "clause_004"
+    ]
+  },
+  "semantic_containment": {
+    "description": "A thought must not introduce terms beyond its declared interface.",
+    "provided_by": [
+      "clause_005"
+    ]
+  }
+}

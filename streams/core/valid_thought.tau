@@ -1,49 +1,41 @@
-# streams/core/valid_thought.tau
-# Title: Valid Thought — Semantic Integrity for Streamed Cognition
-# Stream: streams.core.valid_thought
-
-stream: streams.core.valid_thought
-
-declare concept "valid_thought".
-declare concept "thought_coherence".
-declare concept "thought_origin_trace".
-declare concept "reflexive_integrity".
-declare concept "semantic_containment".
-
 clause_001 v0.1.0:
-  define "valid_thought" as:
-    a statement or clause whose semantic structure
-    aligns with defined concepts, preserves origin trace,
-    and does not contradict prior reasoning unless explicitly amended.
+  stream_name: valid_thought
+  description: A thought is valid if it preserves coherence, origin, and amendment lineage.
+  phrase_predicates:
+    - "a statement" : statement
+    - "defined concepts" : defined_concepts
+    - "preserves origin trace" : preserves_origin_trace
+    - "does not contradict prior reasoning unless explicitly amended" : does_not_contradict_prior_reasoning
 
 clause_002 v0.1.0:
-  define "thought_coherence" as:
-    logical consistency of the clause with its
-    declared upstream dependencies and definitions.
+  stream_name: thought_coherence
+  description: Thought must align logically with its upstream dependencies.
+  phrase_predicates:
+    - "logical consistency with declared upstream dependencies and definitions" : logically_consistent_with_upstream_definitions
 
 clause_003 v0.1.0:
-  define "thought_origin_trace" as:
-    a semantic pointer to the agent or identity stream
-    that authored or amended the thought.
+  stream_name: thought_origin_trace
+  description: Valid thoughts must carry their authorship lineage.
+  phrase_predicates:
+    - "authored by agent" : authored_by_agent
+    - "has identity stream" : has_identity_stream
 
 clause_004 v0.1.0:
-  define "reflexive_integrity" as:
-    the clause’s ability to evaluate its own lineage,
-    coherence, and amendment status.
+  stream_name: reflexive_integrity
+  description: The thought can evaluate its own coherence and amendment status.
+  phrase_predicates:
+    - "evaluates lineage" : evaluates_lineage
+    - "checks coherence" : checks_coherence
+    - "checks amendment status" : checks_amendment_status
 
 clause_005 v0.1.0:
-  define "semantic_containment" as:
-    the principle that no thought may introduce terms
-    outside its declared `provides` or `requires` interface
-    without violating integrity.
+  stream_name: semantic_containment
+  description: A thought must not introduce terms beyond its declared interface.
+  phrase_predicates:
+    - "declares all terms in interface" : declares_all_terms_in_interface
+    - "does not leak terms" : does_not_leak_terms
 
-clause_999 v0.1.0:
-  meta:
-    stream_name: valid_thought
-    version: v0.1.0
-    provides: [valid_thought, thought_coherence, thought_origin_trace, reflexive_integrity, semantic_containment]
-    requires: [identity_trace, concept_definition]
-
-interface:
-  provides: [valid_thought]
+meta:
+  stream_name: valid_thought
+  provides: [valid_thought, thought_coherence, thought_origin_trace, reflexive_integrity, semantic_containment]
   requires: [identity_trace, concept_definition]

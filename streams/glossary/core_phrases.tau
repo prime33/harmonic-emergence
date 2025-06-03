@@ -1,0 +1,73 @@
+stream: streams.glossary.core_phrases
+
+title: Starter Glossary for Tau Compilation
+description: Provides initial phrase → predicate mappings for deterministic compilation.
+
+declare concept "phrase_mapping".
+declare concept "predicate_alias".
+
+clause_100 v0.1.0:
+  phrase_mapping:
+    phrase: "valid thought"
+    alias: "valid_thought"
+clause_101 v0.1.0:
+  phrase_mapping:
+    phrase: "thought coherence"
+    alias: "thought_coherence"
+clause_102 v0.1.0:
+  phrase_mapping:
+    phrase: "thought origin trace"
+    alias: "thought_origin_trace"
+clause_103 v0.1.0:
+  phrase_mapping:
+    phrase: "reflexive integrity"
+    alias: "reflexive_integrity"
+clause_104 v0.1.0:
+  phrase_mapping:
+    phrase: "semantic containment"
+    alias: "semantic_containment"
+clause_105 v0.1.0:
+  phrase_mapping:
+    phrase: "defined concepts"
+    alias: "defined_concepts"
+clause_106 v0.1.0:
+  phrase_mapping:
+    phrase: "preserves origin trace"
+    alias: "preserves_origin_trace"
+clause_107 v0.1.0:
+  phrase_mapping:
+    phrase: "does not contradict prior reasoning"
+    alias: "does_not_contradict_prior_reasoning"
+clause_108 v0.1.0:
+  phrase_mapping:
+    phrase: "logical consistency"
+    alias: "logically_consistent_with_upstream_definitions"
+clause_109 v0.1.0:
+  phrase_mapping:
+    phrase: "semantic pointer to agent"
+    alias: "authored_by_agent"
+clause_110 v0.1.0:
+  phrase_mapping:
+    phrase: "identity stream that authored"
+    alias: "has_identity_stream"
+clause_111 v0.1.0:
+  phrase_mapping:
+    phrase: "evaluate its own lineage"
+    alias: "evaluates_lineage"
+clause_112 v0.1.0:
+  phrase_mapping:
+    phrase: "checks coherence"
+    alias: "checks_coherence"
+clause_113 v0.1.0:
+  phrase_mapping:
+    phrase: "amendment status"
+    alias: "checks_amendment_status"
+clause_114 v0.1.0:
+  phrase_mapping:
+    phrase: "declared provides or requires interface"
+    alias: "declares_all_terms_in_interface"
+clause_115 v0.1.0:
+  phrase_mapping:
+    phrase: "without violating integrity"
+    alias: "does_not_leak_terms"
+

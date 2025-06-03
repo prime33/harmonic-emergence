@@ -1,0 +1,19 @@
+{
+  "clause_001 v0.1.0": "",
+  "a statement": "statement",
+  "defined concepts": "defined_concepts",
+  "preserves origin trace": "preserves_origin_trace",
+  "does not contradict prior reasoning unless explicitly amended": "does_not_contradict_prior_reasoning",
+  "clause_002 v0.1.0": "",
+  "logical consistency with declared upstream dependencies and definitions": "logically_consistent_with_upstream_definitions",
+  "clause_003 v0.1.0": "",
+  "authored by agent": "authored_by_agent",
+  "has identity stream": "has_identity_stream",
+  "clause_004 v0.1.0": "",
+  "evaluates lineage": "evaluates_lineage",
+  "checks coherence": "checks_coherence",
+  "checks amendment status": "checks_amendment_status",
+  "clause_005 v0.1.0": "",
+  "declares all terms in interface": "declares_all_terms_in_interface",
+  "does not leak terms": "does_not_leak_terms"
+}
