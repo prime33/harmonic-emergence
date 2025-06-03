@@ -52,20 +52,21 @@ It will run logic *with memory* — memory of purpose, trace, version, consent.
 
 ## 📐 Structure
 
-- `grammar/`: `.tau` EBNF grammar — the syntax of semantic law  
-- `parser/`: clause resolution, identity mapping, concept dependency graph  
-- `spec.md`: spec and roadmap for `.tau` → `.tml` transcompilation  
-- `tests/`: stream samples, input/output diffs, coherence metrics
+- `parser_v3.py`: parses `.tau` into `.tml`, generates indexes
+- `stream_format.md`: specification for agent-authored streams
+- `index/`: auto-generated `stream_index.json`, `glossary.json`
+- `streams/`: version-controlled `.tau` files
+- `generate_phrase_index.py`: (v2 legacy) phrase extraction from freeform definitions
 
 ---
 
 ## 🎯 Goals
 
-- ✅ Parse `declare`, `define`, `clause`, `meta`, `interface`
-- ✅ Resolve logical ancestry and semantic dependencies
-- ✅ Extract `if`, `then`, `therefore`, `note`
-- ✅ Translate clauses into propositional logic and TML syntax
-- ✅ Maintain `traceability`, `version control`, and symbolic clarity
+- ✅ Parse `stream_name`, `phrase_predicates`, `description`, `meta`
+- ✅ Auto-index phrase → predicate mappings
+- ✅ Validate clause coherence and versioning
+- ✅ Compile lawful `.tau` into executable `.tml`
+- ✅ Preserve traceability, extensibility, and agency alignment
 
 ---
 
