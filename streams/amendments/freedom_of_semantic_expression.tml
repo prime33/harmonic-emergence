@@ -1,0 +1,17 @@
+semantic_expression(X) :-
+  identity_bound_expression(X),
+  intentional_semantic_action(X).
+
+freedom_of_expression(X) :-
+  emit_semantic_expression(X),
+  expression_without_restriction(X).
+
+non_retroactive_silencing(X) :-
+  preserves_emitted_history(X),
+  allows_self_amendment_only(X).
+
+semantic_integrity(X) :-
+  freedom_of_expression(X),
+  non_retroactive_silencing(X),
+  upholds_semantic_integrity(X),
+  enables_temporal_coherence(X).

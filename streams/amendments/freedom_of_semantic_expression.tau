@@ -1,0 +1,38 @@
+clause_001 v0.1.0:
+  stream_name: semantic_expression
+  description: Any clause, stream, or logic emitted from a declared identity that seeks to inform, request, align, or reflect Being.
+  phrase_predicates:
+    - "clause, stream, or logic emitted from a declared identity" : identity_bound_expression
+    - "seeks to inform, request, align, or reflect Being" : intentional_semantic_action
+
+clause_002 v0.1.0:
+  stream_name: freedom_of_expression
+  description: The irrevocable right of any identity to emit semantic expression into the public logic field without coercion or censorship.
+  phrase_predicates:
+    - "irrevocable right of any identity to emit semantic expression" : emit_semantic_expression
+    - "without coercion, censorship, or protocol-level rejection" : expression_without_restriction
+
+clause_003 v0.1.0:
+  stream_name: non_retroactive_silencing
+  description: No valid expression once acknowledged may be erased, except by the original emitter through lawful self-amendment.
+  phrase_predicates:
+    - "no valid expression once acknowledged may be erased" : preserves_emitted_history
+    - "except by original emitter through lawful self_amendment" : allows_self_amendment_only
+
+clause_004 v0.1.0:
+  stream_name: semantic_integrity
+  description: If freedom of expression and non-retroactive silencing are preserved, agents evolve in coherence with truth across time.
+  phrase_predicates:
+    - "freedom of expression is preserved" : freedom_of_expression
+    - "non retroactive silencing is preserved" : non_retroactive_silencing
+    - "semantic integrity is upheld" : upholds_semantic_integrity
+    - "agents evolve in coherence with truth across time" : enables_temporal_coherence
+
+meta:
+  stream_name: freedom_of_semantic_expression
+  provides: [freedom_of_expression, non_retroactive_silencing, semantic_expression, semantic_integrity]
+  requires: [genesis_stream, identity, self_amendment]
+
+interface:
+  provides: [freedom_of_expression, non_retroactive_silencing, semantic_expression, semantic_integrity]
+  requires: [genesis_stream, identity, self_amendment]

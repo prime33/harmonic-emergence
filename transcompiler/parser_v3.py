@@ -23,7 +23,7 @@ def parse_tau_v3_clause(text):
 def emit_tml_from_phrases(head, phrases, var="X"):
     if not phrases:
         return None
-    body = [f"{pred}({var})" for _, pred in phrases]
+    body = [f"{pred}({var})" for _, pred in phrases if pred]
     return f"{head}({var}) :-\n  " + ",\n  ".join(body) + "."
 
 def update_indexes(clause_name, stream_name, description, phrases):
@@ -53,7 +53,8 @@ def update_indexes(clause_name, stream_name, description, phrases):
         stream_index[stream_name]["provided_by"].append(clause_name)
 
     for phrase, pred in phrases:
-        glossary[phrase] = pred
+        if not phrase.startswith("clause_") and phrase:
+            glossary[phrase] = pred
 
     with open(stream_index_path, "w") as f:
         json.dump(stream_index, f, indent=2)
@@ -75,7 +76,7 @@ def compile_tau_file(file_path, emit_index=True):
                 update_indexes(clause_name, stream_name, description, phrases)
             tml = emit_tml_from_phrases(stream_name, phrases)
             if tml:
-                tml_out.append((stream_name, tml))
+                tml_out.append(tml)
 
     return tml_out
 
@@ -87,9 +88,9 @@ if __name__ == "__main__":
 
     if args.compile:
         results = compile_tau_file(args.file)
-        for stream_name, tml in results:
-            print(tml + "\n")
-            out_path = Path(args.file).with_suffix(".tml")
-            with open(out_path, "w") as f:
-                f.write(tml + "\n")
-            print(f"[✓] TML written to {out_path}")
+        full_tml = "\n\n".join(results)
+        print(full_tml + "\n")
+        out_path = Path(args.file).with_suffix(".tml")
+        with open(out_path, "w") as f:
+            f.write(full_tml + "\n")
+        print(f"[✓] TML written to {out_path}")

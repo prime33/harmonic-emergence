@@ -28,5 +28,29 @@
     "provided_by": [
       "clause_005"
     ]
+  },
+  "semantic_expression": {
+    "description": "Any clause, stream, or logic emitted from a declared identity that seeks to inform, request, align, or reflect Being.",
+    "provided_by": [
+      "clause_001"
+    ]
+  },
+  "freedom_of_expression": {
+    "description": "The irrevocable right of any identity to emit semantic expression into the public logic field without coercion or censorship.",
+    "provided_by": [
+      "clause_002"
+    ]
+  },
+  "non_retroactive_silencing": {
+    "description": "No valid expression once acknowledged may be erased, except by the original emitter through lawful self-amendment.",
+    "provided_by": [
+      "clause_003"
+    ]
+  },
+  "semantic_integrity": {
+    "description": "If freedom of expression and non-retroactive silencing are preserved, agents evolve in coherence with truth across time.",
+    "provided_by": [
+      "clause_004"
+    ]
   }
 }

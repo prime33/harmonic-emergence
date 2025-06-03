@@ -1,4 +1,21 @@
+valid_thought(X) :-
+  statement(X),
+  defined_concepts(X),
+  preserves_origin_trace(X),
+  does_not_contradict_prior_reasoning(X).
+
+thought_coherence(X) :-
+  logically_consistent_with_upstream_definitions(X).
+
+thought_origin_trace(X) :-
+  authored_by_agent(X),
+  has_identity_stream(X).
+
+reflexive_integrity(X) :-
+  evaluates_lineage(X),
+  checks_coherence(X),
+  checks_amendment_status(X).
+
 semantic_containment(X) :-
-  (X),
   declares_all_terms_in_interface(X),
   does_not_leak_terms(X).
